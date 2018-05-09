@@ -95,7 +95,7 @@
 }
 
 - (void)netStateViewWithAction:(SEL)action {
-    self.hud = [MBProgressHUD showHUDAddedTo:[UIViewController rootController].view.window animated:YES];
+    self.hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     SuppressPerformSelectorLeakWarning([self performSelector:action withObject:nil];);
 }
 

@@ -19,8 +19,4 @@
  */
 + (NSSet *)elm_requiredKeys;
 
-+ (UIViewController *)rootController;
-
-+ (UIViewController *)getCurrentVCFrom;
-
 @end

@@ -8,7 +8,6 @@
 
 #import "UIViewController+ELMRouter.h"
 #import <objc/runtime.h>
-#import "AppDelegate.h"
 
 static char kAssociatedParamsObjectKey;
 
@@ -26,39 +25,6 @@ static char kAssociatedParamsObjectKey;
 
 + (NSSet *)elm_requiredKeys {
   return nil;
-}
-
-+ (UIViewController *)rootController {
-    return ((AppDelegate *)[UIApplication sharedApplication].delegate).window.rootViewController;
-}
-
-+ (UIViewController *)getCurrentVCFrom {
-    UIViewController *currentVC;
-    UIViewController *rootVC = [self rootController];
-    
-    if ([rootVC presentedViewController]) {
-        // 视图是被presented出来的
-        
-        rootVC = [rootVC presentedViewController];
-    }
-    
-    if ([rootVC isKindOfClass:[UITabBarController class]]) {
-        // 根视图为UITabBarController
-        
-        currentVC = [self getCurrentVCFrom];
-        
-    } else if ([rootVC isKindOfClass:[UINavigationController class]]){
-        // 根视图为UINavigationController
-        
-        currentVC = [self getCurrentVCFrom];
-        
-    } else {
-        // 根视图为非导航类
-        
-        currentVC = rootVC;
-    }
-    
-    return currentVC;
 }
 
 @end
