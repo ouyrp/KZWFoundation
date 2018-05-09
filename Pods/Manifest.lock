@@ -16,13 +16,6 @@ PODS:
     - AFNetworking/NSURLSession
   - Aspects (1.4.1)
   - dsBridge (3.0.2)
-  - KZWFoundation (1.0.2):
-    - AFNetworking
-    - Mantle
-    - Masonry
-    - MBProgressHUD
-    - MJRefresh
-    - SAMKeychain
   - Mantle (2.1.0):
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
@@ -35,7 +28,6 @@ DEPENDENCIES:
   - AFNetworking
   - Aspects
   - dsBridge
-  - KZWFoundation
   - Mantle
   - Masonry
   - MBProgressHUD
@@ -47,7 +39,6 @@ SPEC REPOS:
     - AFNetworking
     - Aspects
     - dsBridge
-    - KZWFoundation
     - Mantle
     - Masonry
     - MBProgressHUD
@@ -58,13 +49,12 @@ SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   dsBridge: e3f0be728d736724a24503a24b7f82b17acdbb23
-  KZWFoundation: a666cd51cf3f1cdf2537bc745ac5e4ed07a55079
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
 
-PODFILE CHECKSUM: 62f495d5efd39003a9bf259055171a1c5f30628c
+PODFILE CHECKSUM: 79fa44fe1938724d51bef45a7bad18d1e603f867
 
 COCOAPODS: 1.5.0
