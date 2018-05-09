@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KZWFoundation"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "iOS 基本库"
 
   # This description is used to generate tags and improve search results.
@@ -91,10 +91,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "Classes/**/*"
   # s.exclude_files = "AFNetworking","MJRefresh","Masonry","Mantle","MBProgressHUD","SAMKeychain"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "Classes/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -105,7 +105,7 @@ Pod::Spec.new do |s|
   #  non-essential files like tests, examples and documentation.
   #
 
-  s.resource  = "KZWFundation.bundle"
+  s.resource  = "Classes/Rseouce/KZWFundation.bundle"
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
