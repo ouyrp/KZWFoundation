@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                   iOS基本库
                    DESC
 
-  s.homepage     = "https://github.com:ouyrp/KZWFoundation.git"
+  s.homepage     = "https://github.com/ouyrp/KZWFoundation"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com:ouyrp/KZWFoundation.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/ouyrp/KZWFoundation.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
