@@ -1,6 +1,0 @@
-framework module FMWebViewJavascriptBridge {
-  umbrella header "FMWebViewJavascriptBridge-umbrella.h"
-
-  export *
-  module * { export * }
-}

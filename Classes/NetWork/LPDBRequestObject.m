@@ -11,7 +11,6 @@
 #import <Mantle/MTLJSONAdapter.h>
 #import "NSError+LPDErrorMessage.h"
 #import "ELMKeychainUtil.h"
-#import "AppDelegate.h"
 #import "UIApplication+ELMFoundation.h"
 #import "KZWConstants.h"
 

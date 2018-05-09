@@ -12,9 +12,8 @@ target 'KZWFoundation' do
     pod 'AFNetworking'
     pod 'Mantle'
     pod 'MBProgressHUD'
-    pod 'FMWebViewJavascriptBridge', '~> 3.0.0'
-    pod 'dsBridge'
     pod 'SAMKeychain'
+    pod 'dsBridge'
     pod 'Aspects'
     
     

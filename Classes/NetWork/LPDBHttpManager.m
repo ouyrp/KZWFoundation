@@ -9,7 +9,6 @@
 #import "LPDBHttpManager.h"
 #import "ELMEnvironmentManager.h"
 #import "UIApplication+ELMFoundation.h"
-#import "AppDelegate.h"
 #import "ELMKeychainUtil.h"
 #import "UIApplication+ELMFoundation.h"
 #import "KZWConstants.h"
