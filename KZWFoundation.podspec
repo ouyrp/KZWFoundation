@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KZWFoundation"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "iOS 基本库"
 
   # This description is used to generate tags and improve search results.
@@ -106,7 +106,8 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "Classes/Rseouce/KZWFundation.bundle"
-  s.resource_bundle = "Classes/Rseouce/KZWFundation.bundle"
+  # s.resource_bundle = "Classes/Rseouce/KZWFundation.bundle"
+  s.resource_bundle = { 'KZWFundation' => 'Classes/Rseouce/KZWFundation.bundle/*' }
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
