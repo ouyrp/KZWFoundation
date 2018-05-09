@@ -15,6 +15,7 @@ target 'KZWFoundation' do
     pod 'SAMKeychain'
     pod 'dsBridge'
     pod 'Aspects'
+    pod 'KZWFoundation'
     
     
   end

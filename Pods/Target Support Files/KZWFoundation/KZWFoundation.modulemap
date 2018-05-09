@@ -1,0 +1,6 @@
+framework module KZWFoundation {
+  umbrella header "KZWFoundation-umbrella.h"
+
+  export *
+  module * { export * }
+}
