@@ -52,5 +52,6 @@
 #import "UIView+KZWCore.h"
 #import "UIViewController+ELMRouter.h"
 #import "ZYImageCacheManager.h"
+#import "UITableView+KZWTableView.h"
 
 #endif /* KZWFoundationHear_h */
