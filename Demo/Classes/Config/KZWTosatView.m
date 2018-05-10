@@ -14,7 +14,7 @@
 @implementation KZWTosatView
 
 + (void)showToastWithMessage:(NSString *)message view:(UIView *)view {
-    MBProgressHUD *messagehud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    MBProgressHUD *messagehud = [MBProgressHUD showHUDAddedTo:view?:[UIApplication sharedApplication].keyWindow animated:YES];
     messagehud.contentColor = [UIColor colorWithHexString:FontColor333333];
     messagehud.mode = MBProgressHUDModeText;
     messagehud.detailsLabel.text = ([message isEqual:[NSNull null]])?@"服务异常":message;
