@@ -18,7 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 20) textColor:[UIColor baseColor] font:FontSize30];
+    label.text = @"金狗理财来咯";
+    [self.view addSubview:label];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
