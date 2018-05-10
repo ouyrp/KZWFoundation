@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
 
   # s.resource  = "Classes/Rseouce/KZWFundation.bundle"
   # s.resource_bundle = "Classes/Rseouce/KZWFundation.bundle"
-  s.resource_bundle = { 'KZWFundation' => ['Classes/Rseouce/KZWFundation.bundle/*'] }
+  s.resource_bundle = { 'KZWFundation' => ['Classes/Rseouce/KZWFundation.bundle'] }
   # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"

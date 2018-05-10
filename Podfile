@@ -14,7 +14,9 @@ target 'KZWFoundation' do
     pod 'MBProgressHUD'
     pod 'SAMKeychain'
     pod 'dsBridge'
-    pod 'Aspects'    
+    pod 'Aspects'
+    pod 'KZWFoundation'
+    
     
   end
 
