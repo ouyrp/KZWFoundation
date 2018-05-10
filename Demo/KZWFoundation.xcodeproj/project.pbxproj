@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301AA70D20A4491F006DED3A /* LPDBItemViewControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA70A20A4491F006DED3A /* LPDBItemViewControlViewController.m */; };
+		301AA70E20A4491F006DED3A /* KZWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA70C20A4491F006DED3A /* KZWNavigationViewController.m */; };
 		3059F29020A1549100280644 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F28F20A1549100280644 /* AppDelegate.m */; };
 		3059F29320A1549100280644 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F29220A1549100280644 /* ViewController.m */; };
 		3059F29620A1549100280644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3059F29420A1549100280644 /* Main.storyboard */; };
@@ -86,6 +88,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301AA70920A4491F006DED3A /* LPDBItemViewControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDBItemViewControlViewController.h; sourceTree = "<group>"; };
+		301AA70A20A4491F006DED3A /* LPDBItemViewControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDBItemViewControlViewController.m; sourceTree = "<group>"; };
+		301AA70B20A4491F006DED3A /* KZWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZWNavigationViewController.h; sourceTree = "<group>"; };
+		301AA70C20A4491F006DED3A /* KZWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZWNavigationViewController.m; sourceTree = "<group>"; };
 		3059F28B20A1549100280644 /* KZWFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KZWFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3059F28E20A1549100280644 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3059F28F20A1549100280644 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -435,6 +441,10 @@
 		3059F34420A186F100280644 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				301AA70B20A4491F006DED3A /* KZWNavigationViewController.h */,
+				301AA70C20A4491F006DED3A /* KZWNavigationViewController.m */,
+				301AA70920A4491F006DED3A /* LPDBItemViewControlViewController.h */,
+				301AA70A20A4491F006DED3A /* LPDBItemViewControlViewController.m */,
 				3059F34C20A1871400280644 /* KZWRequestServerstatus.h */,
 				3059F34B20A1871400280644 /* KZWRequestServerstatus.m */,
 				3059F34820A1870D00280644 /* KZWNetStateView.h */,
@@ -705,6 +715,7 @@
 				3059F30820A1579500280644 /* UIScrollView+KZWRefresh.m in Sources */,
 				3059F31420A1579500280644 /* UIViewController+ELMRouter.m in Sources */,
 				3059F30720A1579500280644 /* UINavigationController+KZWBackButtonHandler.m in Sources */,
+				301AA70D20A4491F006DED3A /* LPDBItemViewControlViewController.m in Sources */,
 				3059F34720A1870300280644 /* KZWViewController.m in Sources */,
 				3059F31220A1579500280644 /* NSObject+Dictionary.m in Sources */,
 				3059F32E20A1592900280644 /* WKCookieSyncManager.m in Sources */,
@@ -714,6 +725,7 @@
 				3059F33C20A17C1F00280644 /* LPDBModel.m in Sources */,
 				3059F29320A1549100280644 /* ViewController.m in Sources */,
 				3059F31020A1579500280644 /* UIImageView+KZWCache.m in Sources */,
+				301AA70E20A4491F006DED3A /* KZWNavigationViewController.m in Sources */,
 				3059F35D20A2ACA100280644 /* RSA.m in Sources */,
 				3059F32C20A1592900280644 /* KZWCorrectLocation.m in Sources */,
 				3059F31720A1579500280644 /* UIView+KZWCore.m in Sources */,
@@ -923,7 +935,10 @@
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -939,7 +954,10 @@
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -954,7 +972,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -970,7 +992,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -985,7 +1011,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1000,7 +1030,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
