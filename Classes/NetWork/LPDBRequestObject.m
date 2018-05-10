@@ -28,7 +28,7 @@
     [requestSerializer setValue:@"ios" forHTTPHeaderField:@"Client-Type"];
     [requestSerializer setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"User-Mac"];
     [requestSerializer setValue:[UIApplication elm_userAgent] forHTTPHeaderField:@"User-Agent"];
-    [requestSerializer setValue:[ELMKeychainUtil valueInKeyChainForKey:KZWFINANCIALLOGINTOKEN]?:KZWFINANCIALLOGINTOKEN forHTTPHeaderField:KZWFINANCIALLOGINTOKEN];
+    [requestSerializer setValue:[ELMKeychainUtil valueInKeyChainForKey:YQYFINANCIALLOGINTOKEN]?:YQYFINANCIALLOGINTOKEN forHTTPHeaderField:YQYFINANCIALLOGINTOKEN];
 }
 
 - (void)startRequestComplete:(LPDBRequestComplete)complete

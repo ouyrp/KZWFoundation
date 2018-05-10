@@ -8,16 +8,9 @@
 
 #import "KZWConstants.h"
 
-#pragma mark - jpush
+#pragma mark - key
 
-NSString *const kLPDBUserKey = @"kLPDBUserKey";
-NSString *const KZWPOPCONFIG = @"KZWPOPCONFIG";
-NSString *const KZWBASECONFIG = @"KZWBASECONFIG";
-NSString *const KZWFOOTBARIMAGE = @"KZWFOOTBARIMAGE";
-NSString *const KZWMINEIMAGE = @"KZWMINEIMAGE";
-NSString *const KZWPERSONINFO = @"KZWPERSONINFO";
-
-NSString *const KZWFINANCIALLOGINTOKEN = @"YQY_USER_LOGIN_TOKEN";
+NSString *const YQYFINANCIALLOGINTOKEN = @"YQY_USER_LOGIN_TOKEN";
 
 
 

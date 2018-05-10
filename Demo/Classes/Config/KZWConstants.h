@@ -9,21 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#pragma mark - jpush
+#pragma mark - key
 
-extern NSString *const kLPDBUserKey; //个人信息保存key
-extern NSString *const KZWPOPCONFIG;
-extern NSString *const KZWBASECONFIG;
-extern NSString *const KZWFOOTBARIMAGE;
-extern NSString *const KZWMINEIMAGE;
-extern NSString *const KZWPERSONINFO;
-
-extern NSString *const KZWFINANCIALLOGINTOKEN;
-
-
-
-
-
+extern NSString *const YQYFINANCIALLOGINTOKEN;
 
 #pragma mark 宏定义
 
@@ -72,6 +60,8 @@ _Pragma("clang diagnostic pop")                                                 
 
 #pragma mark colors
 
+static NSString *FontColorff6600 = @"ff6600";
+
 static NSString *FontColor333333 = @"#333333";
 
 static NSString *FontColor666666 = @"#666666";
@@ -80,7 +70,7 @@ static NSString *FontColor999999 = @"#999999";
 
 static NSString *FontColorcccccc = @"#cccccc";
 
-static NSString *BGColorf5f5f5 = @"#f5f5f5";
+static NSString *BGColorf5f5f5 = @"#f0f0f0";
 
 static NSString *BGColorffffff = @"#ffffff";
 
@@ -108,17 +98,14 @@ static CGFloat FontSize24 = 12;
 
 static CGFloat FontSize22 = 11;
 
+static CGFloat FontSize20 = 10;
+
 static CGFloat FontSize18 = 9;
 
 #pragma mark cornerRadius
 
-static CGFloat Cornerradius48 = 24;
+static CGFloat Cornerradius30 = 15;
 
-static CGFloat Cornerradius45 = 22.5;
-
-static CGFloat Cornerradius42 = 21;
-
-static CGFloat Cornerradius28 = 14;
 
 
 

@@ -36,7 +36,7 @@
         [_sharedRequestOperationManager.requestSerializer setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"User-Mac"];
         [_sharedRequestOperationManager.requestSerializer setValue:[UIApplication elm_userAgent] forHTTPHeaderField:@"User-Agent"];
     });
-    [_sharedRequestOperationManager.requestSerializer setValue:[ELMKeychainUtil valueInKeyChainForKey:KZWFINANCIALLOGINTOKEN]?:KZWFINANCIALLOGINTOKEN forHTTPHeaderField:KZWFINANCIALLOGINTOKEN];
+    [_sharedRequestOperationManager.requestSerializer setValue:[ELMKeychainUtil valueInKeyChainForKey:YQYFINANCIALLOGINTOKEN]?:YQYFINANCIALLOGINTOKEN forHTTPHeaderField:YQYFINANCIALLOGINTOKEN];
     return _sharedRequestOperationManager;
 }
 
