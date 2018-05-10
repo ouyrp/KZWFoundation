@@ -346,8 +346,6 @@
 				3059F2E320A1579000280644 /* UITabBarItem+WebCache.m */,
 				3059F2F020A1579200280644 /* UIView+KZWCore.h */,
 				3059F30220A1579500280644 /* UIView+KZWCore.m */,
-				3059F2F120A1579200280644 /* UIViewController+ELMRouter.h */,
-				3059F2FA20A1579300280644 /* UIViewController+ELMRouter.m */,
 				3059F30320A1579500280644 /* ZYImageCacheManager.h */,
 				3059F2F620A1579300280644 /* ZYImageCacheManager.m */,
 			);
@@ -413,6 +411,8 @@
 		3059F33020A15C0E00280644 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				3059F2F120A1579200280644 /* UIViewController+ELMRouter.h */,
+				3059F2FA20A1579300280644 /* UIViewController+ELMRouter.m */,
 				3059F33220A15C3F00280644 /* ELMRouter.h */,
 				3059F33120A15C3F00280644 /* ELMRouter.m */,
 			);
@@ -925,7 +925,10 @@
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -941,7 +944,10 @@
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -956,7 +962,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -972,7 +982,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -987,7 +1001,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1002,7 +1020,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29PE6SFX2Q;
 				INFOPLIST_FILE = KZWFoundationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = KZWFoundation.KZWFoundationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

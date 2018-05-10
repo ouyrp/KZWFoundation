@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KZWFoundation"
-  s.version      = "1.0.7"
+  s.version      = "1.1.0"
   s.summary      = "iOS 基本库"
 
   # This description is used to generate tags and improve search results.
@@ -91,10 +91,15 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes/**/*"
-  # s.exclude_files = "AFNetworking","MJRefresh","Masonry","Mantle","MBProgressHUD","SAMKeychain"
+  s.source_files  = "Classes/KZWFoundationHear.h"
 
-  s.public_header_files = "Classes/**/*.h"
+  s.subspec 'Content' do |ss|
+    ss.source_files = 'Classes/**/*.{h,m}'
+    ss.exclude_files = "Classes/KZWFoundationHear.h"
+    ss.framework = "MapKit"
+  end
+
+  # s.public_header_files = "Classes/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -118,8 +123,6 @@ Pod::Spec.new do |s|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-
-  s.framework  = "MapKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
