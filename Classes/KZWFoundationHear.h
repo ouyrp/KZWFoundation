@@ -22,10 +22,10 @@
 #import "KZWTosatView.h"
 #import "WKCookieSyncManager.h"
 #import "KZWVersionModel.h"
-#import "CQHUD.h"
+#import "KZWHUD.h"
 #import "UICountingLabel.h"
-#import "ZYProGressView.h"
-#import "TPPasswordTextView.h"
+#import "KZWProGressView.h"
+#import "KZWPasswordTextView.h"
 #import "KZWNoPasteTextField.h"
 #import "KZWBaseTextField.h"
 #import "UILabel+KZWLabel.h"
@@ -55,5 +55,8 @@
 #import "UITableView+KZWTableView.h"
 #import "KZWNavigationViewController.h"
 #import "LPDBItemViewControlViewController.h"
+#import "KZWWebViewController.h"
+#import "KZWDSJavaScripInterface.h"
+#import "KZWJavascripModel.h"
 
 #endif /* KZWFoundationHear_h */

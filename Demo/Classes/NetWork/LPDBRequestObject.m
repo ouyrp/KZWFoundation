@@ -132,11 +132,9 @@
             return;
         }
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-//            BOOL isLogin = ((NSString *)((NSDictionary *)responseObject)[@"isLogin"]).boolValue;
-//            [self logout:isLogin];
             id code = ((NSDictionary *)responseObject)[@"code"];
-            if ([code isKindOfClass:[NSNumber class]]) {
-                if ([code integerValue] == 200) {
+            if ([code isKindOfClass:[NSString class]]) {
+                if ([code integerValue] == 0) {
                     NSError *parseError = nil;
                     if (!self.className) {
                         self.complete(responseObject[@"data"], nil);
@@ -183,9 +181,9 @@
                 
                 NSString *message = ((NSDictionary *)responseObject)[@"msg"] ? ((NSDictionary *)responseObject)[@"msg"] : @"未知错误";
 
-//                if ([code integerValue] == 403) {
-//                    [KZWRouterHelper userLogout];
-//                }
+                if ([code integerValue] == 20000) {
+                    [ELMKeychainUtil deleteAllInfoInKeyChain];
+                }
                 
                 NSError *logicError = [NSError errorWithDomain:LPDBNetworkErrorDomain
                                                           code:LPDBNeteworkBusinessError

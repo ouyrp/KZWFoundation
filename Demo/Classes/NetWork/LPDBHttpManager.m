@@ -173,16 +173,16 @@
 + (NSString *)baseUrl {
     switch ([ELMEnvironmentManager environment]) {
         case ELMEnvBeta:
-            return @"https://market_api.kzlicai.com/";
+            return @"xxxxxx";
             break;
         case ELMEnvAlpha: 
-            return @"https://market_api.kzlicai.com/";
+            return @"xxxxxx";
             break;
         case ELMEnvProduction:
-            return @"https://api.kzlicai.com/";
+            return @"xxxxxx";
             break;
         default:
-            return @"https://api.kzlicai.com/";
+            return @"xxxxx";
             break;
     }
 }

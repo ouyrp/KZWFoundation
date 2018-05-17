@@ -47,7 +47,7 @@
 }
 
 + (UIColor *)baseColor {
-    return [UIColor colorWithHexString:@"#ff6633"];
+    return [UIColor colorWithHexString:@"#66cc66"];
 }
 
 @end
