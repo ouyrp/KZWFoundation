@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum KZWButtonType {
+typedef NS_ENUM(NSUInteger, KZWButtonType) {
     KZWButtonTypeLine,
     KZWButtonTypeBG,
     KZWButtonTypeCancel,
     KZWButtonTypeDefault
-} KZWButtonType;
+};
 
 typedef NS_ENUM(NSInteger, ZXImagePosition) {
     ZXImagePositionLeft     = 0,            //图片在左，文字在右，默认

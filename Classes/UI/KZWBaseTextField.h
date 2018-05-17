@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum KZWTextFieldType {
+typedef NS_ENUM(NSUInteger, KZWTextFieldType) {
     KZWTextFieldPhone,
     KZWTextFieldCode,
     KZWTextFieldPWD,
     KZWTextFieldIdCard,
     KZWTextFieldMoney,
     KZWTextFieldDefault
-} KZWTextFieldType;
+};
 
 @interface KZWBaseTextField : UIView
 
