@@ -58,5 +58,6 @@
 #import "KZWWebViewController.h"
 #import "KZWDSJavaScripInterface.h"
 #import "KZWJavascripModel.h"
+#import "KZWRouterHelper.h"
 
 #endif /* KZWFoundationHear_h */

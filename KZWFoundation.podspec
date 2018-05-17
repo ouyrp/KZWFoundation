@@ -96,7 +96,7 @@ Pod::Spec.new do |s|
   s.subspec 'Content' do |ss|
     ss.source_files = 'Classes/**/*.{h,m}'
     ss.exclude_files = "Classes/KZWFoundationHear.h"
-    ss.framework = "MapKit"
+    ss.frameworks = "MapKit" , "WebKit"
   end
 
   # s.public_header_files = "Classes/**/*.h"
@@ -144,5 +144,6 @@ Pod::Spec.new do |s|
   s.dependency "Mantle"
   s.dependency "MBProgressHUD"
   s.dependency "SAMKeychain"
+  s.dependency "dsBridge"
 
 end
