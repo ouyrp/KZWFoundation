@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "KZWFoundation"
-  s.version      = "1.1.2"
+  s.version      = "1.1.3"
   s.summary      = "iOS 基本库"
 
   # This description is used to generate tags and improve search results.
