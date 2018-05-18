@@ -62,13 +62,13 @@
     return self;
 }
 
-+ (void)kzwbuttonBackGroundNormal:(UIButton *)sender
+- (void)kzwbuttonBackGroundNormal:(UIButton *)sender
 {
     sender.backgroundColor = [UIColor baseColor];
 }
 
 //  button1高亮状态下的背景色
-+ (void)kzwbuttonBackGroundHighlighted:(UIButton *)sender
+- (void)kzwbuttonBackGroundHighlighted:(UIButton *)sender
 {
     sender.backgroundColor = [UIColor colorWithHexString:@"e15e0e"];
 }
