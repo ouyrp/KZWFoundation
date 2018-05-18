@@ -59,30 +59,23 @@
     
     UIImage *cancelimage = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"ic_close.png"]];
     [cancelButton setBackgroundImage:cancelimage forState:UIControlStateNormal];
-//    self.bgView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    @WeakObj(self)
     [goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @StrongObj(self)
         make.centerX.mas_equalTo(self.bgView);
         make.centerY.mas_equalTo(self.bgView).mas_offset(-24);
         make.size.mas_equalTo(CGSizeMake(0.875*SCREEN_WIDTH, 0.875/0.8*SCREEN_WIDTH));
     }];
     
-    // 按钮
-    
     [conversionButton touchUpInside:^{
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
         buttonClickedBlock();
     }];
     
     [conversionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        @StrongObj(self)
         make.centerX.mas_equalTo(self.bgView);
         make.centerY.mas_equalTo(self.bgView).mas_offset(-24);
         make.width.height.mas_equalTo(goodsImageView);
@@ -90,7 +83,6 @@
     
     // 取消按钮
     [cancelButton touchUpInside:^{
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
@@ -159,9 +151,7 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    @WeakObj(self)
     [contenView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @StrongObj(self)
         make.center.mas_equalTo(self.bgView.superview);
         make.width.mas_equalTo(@290);
     }];
@@ -202,21 +192,18 @@
     }];
     
     [cancel touchUpInside:^{
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
     
     [sure touchUpInside:^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.packageDownloadUrl]];
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
     
     [fault touchUpInside:^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.packageDownloadUrl]];
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];

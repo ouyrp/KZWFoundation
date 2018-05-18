@@ -43,7 +43,7 @@
 - (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)())buttonClickedBlock {
     [[UIApplication sharedApplication].keyWindow addSubview:self.bgView];
     self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
-
+    
     UIImageView *goodsImageView = [[UIImageView alloc] init];
     goodsImageView.layer.cornerRadius = 8;
     goodsImageView.layer.masksToBounds = YES;
@@ -52,37 +52,30 @@
     
     UIButton *conversionButton = [[UIButton alloc] init];
     [self.bgView addSubview:conversionButton];
-
+    
     UIButton *cancelButton = [[UIButton alloc] init];
     [self.bgView addSubview:cancelButton];
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"KZWFundation" ofType:@"bundle"];
     
     UIImage *cancelimage = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"ic_close.png"]];
     [cancelButton setBackgroundImage:cancelimage forState:UIControlStateNormal];
-//    self.bgView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    @WeakObj(self)
     [goodsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @StrongObj(self)
         make.centerX.mas_equalTo(self.bgView);
         make.centerY.mas_equalTo(self.bgView).mas_offset(-24);
         make.size.mas_equalTo(CGSizeMake(0.875*SCREEN_WIDTH, 0.875/0.8*SCREEN_WIDTH));
     }];
     
-    // 按钮
-    
     [conversionButton touchUpInside:^{
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
         buttonClickedBlock();
     }];
     
     [conversionButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        @StrongObj(self)
         make.centerX.mas_equalTo(self.bgView);
         make.centerY.mas_equalTo(self.bgView).mas_offset(-24);
         make.width.height.mas_equalTo(goodsImageView);
@@ -90,7 +83,6 @@
     
     // 取消按钮
     [cancelButton touchUpInside:^{
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
@@ -159,42 +151,40 @@
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    @WeakObj(self)
     [contenView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @StrongObj(self)
         make.center.mas_equalTo(self.bgView.superview);
         make.width.mas_equalTo(@290);
     }];
-
+    
     [bgImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(contenView);
         make.size.mas_equalTo(CGSizeMake(228, 85));
     }];
-
+    
     [headIMage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(contenView);
         make.top.mas_equalTo(contenView).mas_offset(-38);
         make.size.mas_equalTo(CGSizeMake(161, 123));
     }];
-
+    
     [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(contenView).mas_offset(120);
         make.right.left.mas_equalTo(contenView).mas_offset(25);
         make.bottom.mas_equalTo(contenView).mas_offset(-88);
     }];
-
+    
     [fault mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(contenView).mas_offset(25);
         make.top.mas_equalTo(contentLabel.mas_bottom).mas_offset(25);
         make.size.mas_equalTo(CGSizeMake(240, 37.5));
     }];
-
+    
     [cancel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(contenView).mas_offset(25);
         make.top.mas_equalTo(contentLabel.mas_bottom).mas_offset(25);
         make.size.mas_equalTo(CGSizeMake(115, 37.5));
     }];
-
+    
     [sure mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(contenView).mas_offset(-25);
         make.top.mas_equalTo(contentLabel.mas_bottom).mas_offset(25);
@@ -202,21 +192,18 @@
     }];
     
     [cancel touchUpInside:^{
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
     
     [sure touchUpInside:^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.packageDownloadUrl]];
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
     
     [fault touchUpInside:^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.packageDownloadUrl]];
-        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];
