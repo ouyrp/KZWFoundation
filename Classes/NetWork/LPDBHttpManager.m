@@ -33,7 +33,7 @@
         [_sharedRequestOperationManager.requestSerializer setValue:[UIApplication elm_version] forHTTPHeaderField:@"version"]; // 版本
         [_sharedRequestOperationManager.requestSerializer setValue:@"AppStore" forHTTPHeaderField:@"channel"];
         [_sharedRequestOperationManager.requestSerializer setValue:[UIDevice currentDevice].systemVersion forHTTPHeaderField:@"os_version"];
-        [_sharedRequestOperationManager.requestSerializer setValue:@"1" forHTTPHeaderField:@"platform_type"];
+        [_sharedRequestOperationManager.requestSerializer setValue:@"iOS" forHTTPHeaderField:@"platform_type"];
         [_sharedRequestOperationManager.requestSerializer setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"device_id"];
         [_sharedRequestOperationManager.requestSerializer setValue:[UIApplication elm_userAgent] forHTTPHeaderField:@"User-Agent"];
     });
