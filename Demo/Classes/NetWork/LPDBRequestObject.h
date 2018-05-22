@@ -23,8 +23,6 @@ typedef void (^LPDBRequestComplete)(id object, NSError *error);
 
 @property (nonatomic, strong) NSString *path;
 
-@property (nonatomic, assign) BOOL isFormData;
-
 /**
  *  json 解析成的对象类名 当josn是数组时 表示数组对象的类名
  */

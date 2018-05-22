@@ -20,26 +20,9 @@
 
 @implementation LPDBRequestObject
 
-- (void)configRequestSerializer:(AFHTTPRequestSerializer *)requestSerializer {
-    requestSerializer.timeoutInterval = 15.0;                                               // 超时限制
-    requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;               // 忽略本地缓存
-    [requestSerializer setValue:[UIApplication elm_version] forHTTPHeaderField:@"Version"]; // 版本
-    [requestSerializer setValue:@"APP" forHTTPHeaderField:@"App-Source"];
-    [requestSerializer setValue:@"ios" forHTTPHeaderField:@"Client-Type"];
-    [requestSerializer setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"User-Mac"];
-    [requestSerializer setValue:[UIApplication elm_userAgent] forHTTPHeaderField:@"User-Agent"];
-    [requestSerializer setValue:[ELMKeychainUtil valueInKeyChainForKey:YQYFINANCIALLOGINTOKEN]?:YQYFINANCIALLOGINTOKEN forHTTPHeaderField:YQYFINANCIALLOGINTOKEN];
-}
-
 - (void)startRequestComplete:(LPDBRequestComplete)complete
                     progress:(nullable void (^)(NSProgress *_Nonnull uploadProgress))progress {
     self.complete = complete;
-    if (_isFormData) {
-        [LPDBHttpManager sharedRequestOperationManager].requestSerializer = [AFHTTPRequestSerializer new];
-    } else {
-        [LPDBHttpManager sharedRequestOperationManager].requestSerializer = [AFJSONRequestSerializer new];
-    }
-    [self configRequestSerializer:[LPDBHttpManager sharedRequestOperationManager].requestSerializer];
     switch (self.method) {
         case LPDHTTPMethodGet: {
             _task = [LPDBHttpManager GET:self.path

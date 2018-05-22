@@ -43,7 +43,7 @@
 - (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)())buttonClickedBlock {
     [[UIApplication sharedApplication].keyWindow addSubview:self.bgView];
     self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
-    
+
     UIImageView *goodsImageView = [[UIImageView alloc] init];
     goodsImageView.layer.cornerRadius = 8;
     goodsImageView.layer.masksToBounds = YES;
@@ -52,7 +52,7 @@
     
     UIButton *conversionButton = [[UIButton alloc] init];
     [self.bgView addSubview:conversionButton];
-    
+
     UIButton *cancelButton = [[UIButton alloc] init];
     [self.bgView addSubview:cancelButton];
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"KZWFundation" ofType:@"bundle"];
@@ -155,36 +155,36 @@
         make.center.mas_equalTo(self.bgView.superview);
         make.width.mas_equalTo(@290);
     }];
-    
+
     [bgImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(contenView);
         make.size.mas_equalTo(CGSizeMake(228, 85));
     }];
-    
+
     [headIMage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(contenView);
         make.top.mas_equalTo(contenView).mas_offset(-38);
         make.size.mas_equalTo(CGSizeMake(161, 123));
     }];
-    
+
     [contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(contenView).mas_offset(120);
         make.right.left.mas_equalTo(contenView).mas_offset(25);
         make.bottom.mas_equalTo(contenView).mas_offset(-88);
     }];
-    
+
     [fault mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(contenView).mas_offset(25);
         make.top.mas_equalTo(contentLabel.mas_bottom).mas_offset(25);
         make.size.mas_equalTo(CGSizeMake(240, 37.5));
     }];
-    
+
     [cancel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(contenView).mas_offset(25);
         make.top.mas_equalTo(contentLabel.mas_bottom).mas_offset(25);
         make.size.mas_equalTo(CGSizeMake(115, 37.5));
     }];
-    
+
     [sure mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(contenView).mas_offset(-25);
         make.top.mas_equalTo(contentLabel.mas_bottom).mas_offset(25);

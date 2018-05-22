@@ -30,10 +30,11 @@
         _sharedRequestOperationManager.responseSerializer.acceptableContentTypes =
         [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/javascript",@"text/plain" ,nil];
         [_sharedRequestOperationManager.requestSerializer setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-        [_sharedRequestOperationManager.requestSerializer setValue:[UIApplication elm_version] forHTTPHeaderField:@"Version"]; // 版本
-        [_sharedRequestOperationManager.requestSerializer setValue:@"APP" forHTTPHeaderField:@"App-Source"];
-        [_sharedRequestOperationManager.requestSerializer setValue:@"ios" forHTTPHeaderField:@"Client-Type"];
-        [_sharedRequestOperationManager.requestSerializer setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"User-Mac"];
+        [_sharedRequestOperationManager.requestSerializer setValue:[UIApplication elm_version] forHTTPHeaderField:@"version"]; // 版本
+        [_sharedRequestOperationManager.requestSerializer setValue:@"AppStore" forHTTPHeaderField:@"channel"];
+        [_sharedRequestOperationManager.requestSerializer setValue:[UIDevice currentDevice].systemVersion forHTTPHeaderField:@"os_version"];
+        [_sharedRequestOperationManager.requestSerializer setValue:@"1" forHTTPHeaderField:@"platform_type"];
+        [_sharedRequestOperationManager.requestSerializer setValue:[[[UIDevice currentDevice] identifierForVendor] UUIDString] forHTTPHeaderField:@"device_id"];
         [_sharedRequestOperationManager.requestSerializer setValue:[UIApplication elm_userAgent] forHTTPHeaderField:@"User-Agent"];
     });
     [_sharedRequestOperationManager.requestSerializer setValue:[ELMKeychainUtil valueInKeyChainForKey:YQYFINANCIALLOGINTOKEN]?:YQYFINANCIALLOGINTOKEN forHTTPHeaderField:YQYFINANCIALLOGINTOKEN];
