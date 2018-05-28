@@ -38,7 +38,7 @@ KZW_NAV_BAR_HIDDEN:                                                             
 
 + (UIViewController *)rootController;
 
-+ (UIViewController *)getCurrentVCFrom;
++ (UIViewController *)getCurrentVC;
 
 + (void)pushbyPath:(NSString *)path;
 
