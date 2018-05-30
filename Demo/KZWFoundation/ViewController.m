@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property  (nonatomic, strong) UIView *view;
+
 @end
 
 @implementation ViewController
@@ -22,6 +24,10 @@
     label.text = @"啦啦啦啦";
     [self.view addSubview:label];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)view {
+
 }
 
 
