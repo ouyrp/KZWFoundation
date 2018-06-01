@@ -27,6 +27,9 @@
 
 - (void)addFooterRefreshWithCallback:(nullable void(^)())callback {
     MJRefreshAutoNormalFooter *refreshFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:callback];
+    [refreshFooter setTitle:@"" forState:MJRefreshStateIdle];
+    [refreshFooter setTitle:@"" forState:MJRefreshStateRefreshing];
+    [refreshFooter setTitle:@"" forState:MJRefreshStateNoMoreData];
     refreshFooter.refreshingTitleHidden = YES;
     refreshFooter.triggerAutomaticallyRefreshPercent = 0.2;
     self.mj_footer = refreshFooter;
