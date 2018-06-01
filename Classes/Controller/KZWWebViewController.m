@@ -18,6 +18,7 @@
 #import "UIButton+KZWButton.h"
 #import "UIColor+KZWColor.h"
 #import "ELMEnvironmentManager.h"
+#import "KZWNetStateView.h"
 
 @interface KZWWebViewController ()<WKNavigationDelegate, KZWDSJavaScripInterfaceDelegate>
 
@@ -60,9 +61,15 @@
 }
 
 - (void)leftBar {
+    NSString *bundlePath = [[NSBundle bundleForClass:[KZWNetStateView class]].resourcePath
+                            stringByAppendingPathComponent:@"/KZWFundation.bundle/KZWFundation.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    UIImage *image = [UIImage imageNamed:@"ic_colorback.png"
+                                inBundle:resource_bundle
+           compatibleWithTraitCollection:nil];
     UIBarButtonItem *itemone = [[UIBarButtonItem alloc] initWithCustomView:({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setImage:[UIImage imageNamed:@"ic_colorback"] forState:UIControlStateNormal];
+        [button setImage:image forState:UIControlStateNormal];
         [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         button.frame = CGRectMake(0, 0, 30, 30);
         button;
@@ -188,22 +195,7 @@
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    UIBarButtonItem *itemtwo = [[UIBarButtonItem alloc] initWithCustomView:({
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setImage:[UIImage imageNamed:@"account_cha"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(comeBack:) forControlEvents:UIControlEventTouchUpInside];
-        button.frame = CGRectMake(0, 0, 30, 30);
-        button.hidden = !self.webView.canGoBack;
-        button;
-    })];
-    UIBarButtonItem *itemone = [[UIBarButtonItem alloc] initWithCustomView:({
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setImage:[UIImage imageNamed:@"ic_colorback"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        button.frame = CGRectMake(0, 0, 30, 30);
-        button;
-    })];
-    self.navigationItem.leftBarButtonItems = @[itemone, itemtwo];
+    
 }
 
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {

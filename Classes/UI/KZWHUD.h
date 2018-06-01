@@ -15,7 +15,7 @@
 
 #pragma mark - 带网络图片与block回调的弹窗
 /** 带网络图片与block回调的弹窗 */
-- (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void(^)())buttonClickedBlock;
+- (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void(^)(void))buttonClickedBlock;
 
 - (void)showVersionUpdate:(KZWVersionModel *)model;
 
