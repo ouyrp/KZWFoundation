@@ -40,7 +40,7 @@
     return _bgView;
 }
 
-- (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)())buttonClickedBlock {
+- (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)(void))buttonClickedBlock {
     [[UIApplication sharedApplication].keyWindow addSubview:self.bgView];
     self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
 
@@ -55,10 +55,14 @@
 
     UIButton *cancelButton = [[UIButton alloc] init];
     [self.bgView addSubview:cancelButton];
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"KZWFundation" ofType:@"bundle"];
     
-    UIImage *cancelimage = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"ic_close.png"]];
-    [cancelButton setBackgroundImage:cancelimage forState:UIControlStateNormal];
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                            stringByAppendingPathComponent:@"/KZWFundation.bundle/KZWFundation.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    UIImage *cancelimage = [UIImage imageNamed:@"cancelimage.png"
+                                      inBundle:resource_bundle
+                 compatibleWithTraitCollection:nil];
+    [cancelButton setImage:cancelimage forState:UIControlStateNormal];
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
@@ -115,7 +119,7 @@
     [contenView addSubview:bgImage];
     
     UIImageView *headIMage = [[UIImageView alloc] init];
-    UIImage *headimage = [UIImage imageNamed:@"update_bg.png"
+    UIImage *headimage = [UIImage imageNamed:@"update_head.png"
                                   inBundle:resource_bundle
              compatibleWithTraitCollection:nil];
     headIMage.image = headimage;
