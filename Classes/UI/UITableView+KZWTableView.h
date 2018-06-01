@@ -12,4 +12,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style separatorStyle:(UITableViewCellSeparatorStyle)separatorStyle automatic:(BOOL)automatic;
 
+- (void)showNoDataView:(NSArray *)array;
+
 @end

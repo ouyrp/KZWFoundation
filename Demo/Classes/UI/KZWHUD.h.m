@@ -104,14 +104,20 @@
     [self.bgView addSubview:contenView];
     
     UIImageView *bgImage = [[UIImageView alloc] init];
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"KZWFundation" ofType:@"bundle"];
     
-    UIImage *bgimage = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"update_bg.png"]];
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                            stringByAppendingPathComponent:@"/KZWFundation.bundle/KZWFundation.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    UIImage *bgimage = [UIImage imageNamed:@"update_bg.png"
+                              inBundle:resource_bundle
+         compatibleWithTraitCollection:nil];
     bgImage.image = bgimage;
     [contenView addSubview:bgImage];
     
     UIImageView *headIMage = [[UIImageView alloc] init];
-    UIImage *headimage = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"update_head.png"]];
+    UIImage *headimage = [UIImage imageNamed:@"update_bg.png"
+                                  inBundle:resource_bundle
+             compatibleWithTraitCollection:nil];
     headIMage.image = headimage;
     [contenView addSubview:headIMage];
     UILabel *headLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 17, 120, 15) textColor:[UIColor colorWithHexString:@"3366cc"] font:FontSize34];

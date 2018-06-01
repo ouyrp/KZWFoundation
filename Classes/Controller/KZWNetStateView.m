@@ -28,19 +28,22 @@
     if (self = [super initWithFrame:frame]) {
         self.hidden = YES;
         self.backgroundColor = [UIColor whiteColor];
+        NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                                stringByAppendingPathComponent:@"/KZWFundation.bundle/KZWFundation.bundle"];
+        NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+        self.bgImage = [UIImage imageNamed:@"bg_server.png"
+                                  inBundle:resource_bundle
+             compatibleWithTraitCollection:nil];
         [self addSubview:self.netImage];
         [self addSubview:self.netLabel];
         [self addSubview:self.button];
-        NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"KZWFundation" ofType:@"bundle"];
-        
-        self.bgImage = [UIImage imageWithContentsOfFile:[bundlePath stringByAppendingPathComponent:@"bg_server.png"]];
     }
     return self;
 }
     
 - (UIImageView *)netImage {
     if (!_netImage) {
-        _netImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 266/2)/2, (SCREEN_HEIGHT - 204/2)/2 - 84, 266/2, 204/2)];
+        _netImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 266/2)/2, 150, 266/2, 204/2)];
         _netImage.image = self.bgImage;
     }
     return _netImage;

@@ -86,7 +86,7 @@
 
 - (void)showLoadFailedNoticeWithAction:(SEL)action frame:(CGRect)frame isWeb:(BOOL)isWeb {
     if (!self.netStatueView) {
-        self.netStatueView = [[KZWNetStateView alloc] initWithFrame:frame];
+        self.netStatueView = [[KZWNetStateView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.netStatueView.delegate = self;
         [self.view addSubview:self.netStatueView];
     }
