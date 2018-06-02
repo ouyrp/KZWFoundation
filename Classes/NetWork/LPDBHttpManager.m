@@ -46,9 +46,12 @@
     
     /* 配置1：验证锁定的证书，需要在项目中导入eleme.cer根证书*/
     // /先导入证书
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"KZWFundation" ofType:@"bundle"];
-
-    NSString *cerPath = [[NSBundle bundleWithPath:bundlePath] pathForResource:@"kongzhongjr" ofType:@"cer"]; //证书的路径
+    
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                            stringByAppendingPathComponent:@"/KZWFundation.bundle/KZWFundation.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    NSString *cerPath = [resource_bundle pathForResource:@"kongzhongjr" ofType:@"cer"]; //证书的路径
+    
     // NSLog(@"certPath  % @",cerPath);
     NSData *certData = [NSData dataWithContentsOfFile:cerPath];
     // NSLog(@"certData %@",certData);
