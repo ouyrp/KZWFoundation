@@ -23,4 +23,5 @@
  *  @return
  */
 + (NSArray *)filter;
+
 @end
