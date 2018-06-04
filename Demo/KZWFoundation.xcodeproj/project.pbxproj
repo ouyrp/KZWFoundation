@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		301AA70D20A4491F006DED3A /* LPDBItemViewControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA70A20A4491F006DED3A /* LPDBItemViewControlViewController.m */; };
+		3012896B20C4E83300B2FBCA /* LPDBItemViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3012896920C4E83200B2FBCA /* LPDBItemViewControl.m */; };
 		301AA70E20A4491F006DED3A /* KZWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA70C20A4491F006DED3A /* KZWNavigationViewController.m */; };
 		301AA75F20AD3051006DED3A /* KZWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA75E20AD3051006DED3A /* KZWWebViewController.m */; };
 		301AA76220AD3061006DED3A /* KZWRouterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 301AA76120AD3061006DED3A /* KZWRouterHelper.m */; };
@@ -92,8 +92,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		301AA70920A4491F006DED3A /* LPDBItemViewControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDBItemViewControlViewController.h; sourceTree = "<group>"; };
-		301AA70A20A4491F006DED3A /* LPDBItemViewControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDBItemViewControlViewController.m; sourceTree = "<group>"; };
+		3012896920C4E83200B2FBCA /* LPDBItemViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDBItemViewControl.m; sourceTree = "<group>"; };
+		3012896A20C4E83300B2FBCA /* LPDBItemViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDBItemViewControl.h; sourceTree = "<group>"; };
 		301AA70B20A4491F006DED3A /* KZWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZWNavigationViewController.h; sourceTree = "<group>"; };
 		301AA70C20A4491F006DED3A /* KZWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZWNavigationViewController.m; sourceTree = "<group>"; };
 		301AA75D20AD3050006DED3A /* KZWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZWWebViewController.h; sourceTree = "<group>"; };
@@ -463,8 +463,8 @@
 				301AA75E20AD3051006DED3A /* KZWWebViewController.m */,
 				301AA70B20A4491F006DED3A /* KZWNavigationViewController.h */,
 				301AA70C20A4491F006DED3A /* KZWNavigationViewController.m */,
-				301AA70920A4491F006DED3A /* LPDBItemViewControlViewController.h */,
-				301AA70A20A4491F006DED3A /* LPDBItemViewControlViewController.m */,
+				3012896A20C4E83300B2FBCA /* LPDBItemViewControl.h */,
+				3012896920C4E83200B2FBCA /* LPDBItemViewControl.m */,
 				3059F34C20A1871400280644 /* KZWRequestServerstatus.h */,
 				3059F34B20A1871400280644 /* KZWRequestServerstatus.m */,
 				3059F34820A1870D00280644 /* KZWNetStateView.h */,
@@ -735,7 +735,6 @@
 				3059F30820A1579500280644 /* UIScrollView+KZWRefresh.m in Sources */,
 				3059F31420A1579500280644 /* UIViewController+ELMRouter.m in Sources */,
 				3059F30720A1579500280644 /* UINavigationController+KZWBackButtonHandler.m in Sources */,
-				301AA70D20A4491F006DED3A /* LPDBItemViewControlViewController.m in Sources */,
 				3059F34720A1870300280644 /* KZWViewController.m in Sources */,
 				3059F31220A1579500280644 /* NSObject+Dictionary.m in Sources */,
 				3059F32E20A1592900280644 /* WKCookieSyncManager.m in Sources */,
@@ -769,6 +768,7 @@
 				3059F34A20A1870E00280644 /* KZWNetStateView.m in Sources */,
 				3059F2DF20A1578100280644 /* UILabel+KZWLabel.m in Sources */,
 				3059F30A20A1579500280644 /* UIControl+Block.m in Sources */,
+				3012896B20C4E83300B2FBCA /* LPDBItemViewControl.m in Sources */,
 				3059F35C20A2ACA100280644 /* KZWRSAenscryptString.m in Sources */,
 				3059F32D20A1592900280644 /* KZWConstants.m in Sources */,
 				3059F2DE20A1578100280644 /* KZWPasswordTextView.m in Sources */,

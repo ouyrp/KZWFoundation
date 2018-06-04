@@ -26,7 +26,7 @@
 
 typedef void (^LPDBItemsControlViewTapBlock)(NSInteger index,BOOL animation);
 
-@interface LPDBItemViewControlViewController : UIScrollView
+@interface LPDBItemViewControl : UIScrollView
 
 @property(nonatomic,strong)LPDBItemsConfig *config;
 @property(nonatomic,strong)NSArray *titleArray;

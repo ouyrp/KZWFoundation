@@ -54,7 +54,7 @@
 #import "ZYImageCacheManager.h"
 #import "UITableView+KZWTableView.h"
 #import "KZWNavigationViewController.h"
-#import "LPDBItemViewControlViewController.h"
+#import "LPDBItemViewControl.h"
 #import "KZWWebViewController.h"
 #import "KZWDSJavaScripInterface.h"
 #import "KZWJavascripModel.h"

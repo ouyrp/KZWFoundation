@@ -6,7 +6,7 @@
 //  Copyright © 2016年 LPD. All rights reserved.
 //
 
-#import "LPDBItemViewControlViewController.h"
+#import "LPDBItemViewControl.h"
 #import "UIColor+KZWColor.h"
 #import "KZWConstants.h"
 
@@ -18,7 +18,7 @@
     if(self){
         _itemWidth = 0;
         _itemFont = [UIFont boldSystemFontOfSize:14];
-        _textColor = [UIColor baseColor];
+        _textColor = [UIColor colorWithHexString:FontColor666666];
         _selectedColor = [UIColor baseColor];
         _linePercent = 0.7;
         _lineHieght = 1.5;
@@ -30,7 +30,7 @@
 @end
 
 
-@interface LPDBItemViewControlViewController()
+@interface LPDBItemViewControl()
 
 @property(nonatomic,strong)UIView *line;
 
@@ -38,7 +38,7 @@
 @end
 
 
-@implementation LPDBItemViewControlViewController
+@implementation LPDBItemViewControl
 
 -(id)initWithFrame:(CGRect)frame
 {
