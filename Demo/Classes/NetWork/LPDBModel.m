@@ -10,7 +10,6 @@
 #import "NSObject+Dictionary.h"
 
 @implementation LPDBModel
-
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
   NSMutableDictionary *dic = [[[self new] propertyToproperty] mutableCopy];
   for (NSString *key in [self mapKey].allKeys) {

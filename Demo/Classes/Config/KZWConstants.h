@@ -19,8 +19,8 @@ extern NSString *const YQYFINANCIALLOGINTOKEN;
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 // iPhone X
-#define KZW_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
-#define KZW_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define  KZW_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
+
 // Status bar height.
 #define  KZW_StatusBarHeight      (KZW_iPhoneX ? 44.f : 20.f)
 

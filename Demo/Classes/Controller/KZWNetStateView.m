@@ -26,7 +26,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         self.hidden = YES;
         self.backgroundColor = [UIColor whiteColor];
         NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
