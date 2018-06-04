@@ -23,3 +23,7 @@
 @implementation KZWShareModel
 
 @end
+
+@implementation KZWWebControllerModel
+
+@end

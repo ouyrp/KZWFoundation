@@ -31,3 +31,10 @@
 @property (copy, nonatomic) NSString *imageUrl;
 
 @end
+
+@interface KZWWebControllerModel : LPDBModel
+
+@property (nonatomic, copy) NSString *controllerName;
+@property (nonatomic, assign) NSInteger pid;
+
+@end
