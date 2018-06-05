@@ -54,9 +54,6 @@
         _toolbar = [[UIToolbar alloc] initWithFrame:tempFrame];
         UIBarButtonItem *bgItem = [[UIBarButtonItem alloc] initWithCustomView:({
             UIView *bgview = [[UIView alloc] initWithFrame:CGRectMake(8, 0, 200, 40)];
-//            UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 20, 20)];
-//            image.image = [UIImage imageNamed:@"bg_tfaq"];
-//            [bgview addSubview:image];
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 150, 40) textColor:[UIColor colorWithHexString:FontColor999999] font:FontSize24];
             label.text = @"易起盈安全键盘";
             [bgview addSubview:label];

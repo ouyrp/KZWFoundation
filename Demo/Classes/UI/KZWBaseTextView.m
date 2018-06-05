@@ -9,8 +9,12 @@
 #import "KZWBaseTextView.h"
 #import "UIColor+KZWColor.h"
 #import "KZWConstants.h"
+#import "UIButton+KZWButton.h"
+#import "UILabel+KZWLabel.h"
 
 @interface KZWBaseTextView()<UITextViewDelegate>
+
+@property (strong, nonatomic) UIToolbar *toolbar;
 
 @end
 
@@ -35,6 +39,7 @@
         _textView.layer.borderColor = [UIColor colorWithHexString:FontColorcccccc].CGColor;
         _textView.layer.borderWidth = 0.5;
         _textView.layer.masksToBounds = YES;
+        _textView.inputAccessoryView = self.toolbar;
     }
     return _textView;
 }
@@ -45,6 +50,35 @@
         return NO;
     }
     return YES;
+}
+
+- (UIToolbar *)toolbar
+{
+    if (!_toolbar) {
+        CGRect tempFrame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
+        _toolbar = [[UIToolbar alloc] initWithFrame:tempFrame];
+        UIBarButtonItem *bgItem = [[UIBarButtonItem alloc] initWithCustomView:({
+            UIView *bgview = [[UIView alloc] initWithFrame:CGRectMake(8, 0, 200, 40)];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 150, 40) textColor:[UIColor colorWithHexString:FontColor999999] font:FontSize24];
+            label.text = @"易起盈安全键盘";
+            [bgview addSubview:label];
+            bgview;
+        })];
+        UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *endItem = [[UIBarButtonItem alloc] initWithCustomView:({
+            UIButton *end = [[UIButton alloc] initWithType:KZWButtonTypeDefault normalTitle:@"完成" titleFont:FontSize28 cornerRadius:0];
+            [end addTarget:self action:@selector(end:) forControlEvents:UIControlEventTouchUpInside];
+            end.backgroundColor = [UIColor clearColor];
+            end.frame = CGRectMake(0, 0, 40, 40);
+            end;
+        })];
+        _toolbar.items = @[bgItem, spaceItem, endItem];
+    }
+    return _toolbar;
+}
+
+- (void)end:(id)sender {
+    [self.textView resignFirstResponder];
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
