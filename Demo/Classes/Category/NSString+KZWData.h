@@ -39,5 +39,6 @@
 - (BOOL)validateIdentityCard;
 - (BOOL)validateBankCardNumCheck;
 - (BOOL)validateTextField;
+- (BOOL)validateMoney;
 
 @end
