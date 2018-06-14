@@ -191,7 +191,14 @@
     NSString *urlString = [[navigationAction.request URL] absoluteString];
     urlString = [urlString stringByRemovingPercentEncoding];//解析url
     //url截取根据自己业务增加代码
-    decisionHandler(WKNavigationActionPolicyAllow);
+    if ([[navigationAction.request.URL host] isEqualToString:@"itunes.apple.com"] && [[UIApplication sharedApplication] openURL:navigationAction.request.URL]) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+    }else if([urlString hasPrefix:@"tel"]){
+        decisionHandler(WKNavigationActionPolicyCancel);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString: urlString]];
+    }else {
+        decisionHandler(WKNavigationActionPolicyAllow);
+    }
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
