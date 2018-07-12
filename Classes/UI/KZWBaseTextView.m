@@ -35,11 +35,11 @@
         _textView.textColor = [UIColor colorWithHexString:@"FontColor333333"];
         _textView.returnKeyType = UIReturnKeyDone;
         _textView.textAlignment = NSTextAlignmentRight;
+        _textView.inputAccessoryView = self.toolbar;
         _textView.layer.cornerRadius = 6;
         _textView.layer.borderColor = [UIColor colorWithHexString:FontColorcccccc].CGColor;
         _textView.layer.borderWidth = 0.5;
         _textView.layer.masksToBounds = YES;
-        _textView.inputAccessoryView = self.toolbar;
     }
     return _textView;
 }

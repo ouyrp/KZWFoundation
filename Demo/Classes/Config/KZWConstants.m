@@ -11,6 +11,7 @@
 #pragma mark - key
 
 NSString *const YQYFINANCIALLOGINTOKEN = @"YQY_USER_LOGIN_TOKEN";
+NSString *const KZWDEBUGKEY = @"KZW_DEBUG_KEY";
 
 
 

@@ -12,6 +12,7 @@
 #pragma mark - key
 
 extern NSString *const YQYFINANCIALLOGINTOKEN;
+extern NSString *const KZWDEBUGKEY;
 
 #pragma mark 宏定义
 

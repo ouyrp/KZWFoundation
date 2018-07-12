@@ -13,6 +13,7 @@
 #import "ELMKeychainUtil.h"
 #import "UIApplication+ELMFoundation.h"
 #import "KZWConstants.h"
+#import "KZWDebugService.h"
 
 @interface LPDBRequestObject ()
 @property (nonatomic, copy) LPDBRequestComplete complete;
@@ -109,6 +110,10 @@
 }
 
 - (void)handleRespondse:(NSURLSessionDataTask *)response responseObject:(id)responseObject error:(NSError *)error {
+#if DEBUG
+    [KZWDebugService setCurrentDebug:responseObject];
+    [KZWDebugService saveDebug];
+#endif
     if (self.complete) {
         if (error) {
             self.complete(nil, error);

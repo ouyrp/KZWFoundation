@@ -15,6 +15,7 @@
 #import "UILabel+KZWLabel.h"
 #import "UIButton+KZWButton.h"
 #import "UIControl+Block.h"
+#import "UILabel+KZWLabel.h"
 
 @interface KZWHUD()
 
@@ -214,6 +215,38 @@
     
     [fault touchUpInside:^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:model.packageDownloadUrl]];
+        [self.bgView removeFromSuperview];
+        self.bgView = nil;
+    }];
+}
+
+- (void)showDebug:(NSString *)message {
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:self.bgView];
+    self.bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+    
+    
+    UIScrollView *scrollerview = [[UIScrollView alloc] initWithFrame:CGRectMake(10, KZW_StatusBarAndNavigationBarHeight, SCREEN_WIDTH - 20, SCREEN_HEIGHT - KZW_StatusBarAndNavigationBarHeight - KZW_TabbarHeight)];
+    scrollerview.backgroundColor = [UIColor whiteColor];
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 20, SCREEN_HEIGHT - KZW_StatusBarAndNavigationBarHeight - KZW_TabbarHeight) textColor:[UIColor colorWithHexString:FontColor333333] font:FontSize26];
+    label.text = message;
+    [label sizeToFit];
+    [scrollerview addSubview:label];
+    scrollerview.contentSize = CGSizeMake(SCREEN_WIDTH - 20, label.frame.size.height);
+    [self.bgView addSubview:scrollerview];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 30 - 20, KZW_iPhoneX?44:20, 30, 30)];
+    [backButton setImage:[UIImage imageNamed:@"bg_cancel"] forState:UIControlStateNormal];
+    [self.bgView addSubview:backButton];
+    
+    @WeakObj(self)
+    [backButton touchUpInside:^{
+        @StrongObj(self)
         [self.bgView removeFromSuperview];
         self.bgView = nil;
     }];

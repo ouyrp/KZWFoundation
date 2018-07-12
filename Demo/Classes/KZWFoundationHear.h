@@ -59,5 +59,6 @@
 #import "KZWDSJavaScripInterface.h"
 #import "KZWJavascripModel.h"
 #import "KZWRouterHelper.h"
+#import "KZWDebugService.h"
 
 #endif /* KZWFoundationHear_h */

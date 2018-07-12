@@ -19,4 +19,6 @@
 
 - (void)showVersionUpdate:(KZWVersionModel *)model;
 
+- (void)showDebug:(NSString *)message;
+
 @end

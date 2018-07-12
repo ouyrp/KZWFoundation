@@ -59,7 +59,7 @@
 		3059F33B20A17C1F00280644 /* LPDBHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F33620A17C1E00280644 /* LPDBHttpManager.m */; };
 		3059F33C20A17C1F00280644 /* LPDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F33920A17C1E00280644 /* LPDBModel.m */; };
 		3059F33D20A17C1F00280644 /* LPDBRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F33A20A17C1E00280644 /* LPDBRequestObject.m */; };
-		3059F34020A184DD00280644 /* KZWHUD.h.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F33E20A184DC00280644 /* KZWHUD.h.m */; };
+		3059F34020A184DD00280644 /* KZWHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F33E20A184DC00280644 /* KZWHUD.m */; };
 		3059F34320A1850200280644 /* KZWVersionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F34220A1850200280644 /* KZWVersionModel.m */; };
 		3059F34720A1870300280644 /* KZWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F34620A1870300280644 /* KZWViewController.m */; };
 		3059F34A20A1870E00280644 /* KZWNetStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F34920A1870E00280644 /* KZWNetStateView.m */; };
@@ -69,6 +69,7 @@
 		3059F35C20A2ACA100280644 /* KZWRSAenscryptString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F35820A2ACA000280644 /* KZWRSAenscryptString.m */; };
 		3059F35D20A2ACA100280644 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F35A20A2ACA100280644 /* RSA.m */; };
 		3059F36020A2ACA800280644 /* KZWJpushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3059F35F20A2ACA800280644 /* KZWJpushModel.m */; };
+		30DBD9DC20F703B000E8F257 /* KZWDebugService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD9DB20F703AF00E8F257 /* KZWDebugService.m */; };
 		6E420BDD38962E8F819E6001 /* Pods_KZWFoundationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73A020F1DDA7C9090C06FED /* Pods_KZWFoundationTests.framework */; };
 		9199F78F5E55AAC20818E9F2 /* Pods_KZWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4348EBA50876CFE89044A5 /* Pods_KZWFoundation.framework */; };
 		E03D2FB4F61129D6A8786B59 /* Pods_KZWFoundationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AADFE66FDD7ED8B82116376 /* Pods_KZWFoundationUITests.framework */; };
@@ -196,7 +197,7 @@
 		3059F33820A17C1E00280644 /* LPDBRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPDBRequestObject.h; sourceTree = "<group>"; };
 		3059F33920A17C1E00280644 /* LPDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDBModel.m; sourceTree = "<group>"; };
 		3059F33A20A17C1E00280644 /* LPDBRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPDBRequestObject.m; sourceTree = "<group>"; };
-		3059F33E20A184DC00280644 /* KZWHUD.h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZWHUD.h.m; sourceTree = "<group>"; };
+		3059F33E20A184DC00280644 /* KZWHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZWHUD.m; sourceTree = "<group>"; };
 		3059F33F20A184DC00280644 /* KZWHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZWHUD.h; sourceTree = "<group>"; };
 		3059F34120A1850200280644 /* KZWVersionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KZWVersionModel.h; sourceTree = "<group>"; };
 		3059F34220A1850200280644 /* KZWVersionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KZWVersionModel.m; sourceTree = "<group>"; };
@@ -216,6 +217,8 @@
 		3059F35B20A2ACA100280644 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
 		3059F35E20A2ACA800280644 /* KZWJpushModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZWJpushModel.h; sourceTree = "<group>"; };
 		3059F35F20A2ACA800280644 /* KZWJpushModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZWJpushModel.m; sourceTree = "<group>"; };
+		30DBD9DA20F703AF00E8F257 /* KZWDebugService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZWDebugService.h; sourceTree = "<group>"; };
+		30DBD9DB20F703AF00E8F257 /* KZWDebugService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZWDebugService.m; sourceTree = "<group>"; };
 		377F14706E4409356BC86786 /* Pods-KZWFoundationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KZWFoundationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KZWFoundationTests/Pods-KZWFoundationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4AADFE66FDD7ED8B82116376 /* Pods_KZWFoundationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KZWFoundationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C316CCC2DB07337DD17E43 /* Pods-KZWFoundationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KZWFoundationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KZWFoundationTests/Pods-KZWFoundationTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -376,7 +379,7 @@
 				3059F34120A1850200280644 /* KZWVersionModel.h */,
 				3059F34220A1850200280644 /* KZWVersionModel.m */,
 				3059F33F20A184DC00280644 /* KZWHUD.h */,
-				3059F33E20A184DC00280644 /* KZWHUD.h.m */,
+				3059F33E20A184DC00280644 /* KZWHUD.m */,
 				3059F2D520A1578100280644 /* UICountingLabel.h */,
 				3059F2D620A1578100280644 /* UICountingLabel.m */,
 				3059F2CC20A1577F00280644 /* KZWProGressView.h */,
@@ -406,6 +409,8 @@
 		3059F31A20A158FD00280644 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				30DBD9DA20F703AF00E8F257 /* KZWDebugService.h */,
+				30DBD9DB20F703AF00E8F257 /* KZWDebugService.m */,
 				301AA76520AD3304006DED3A /* KZWDSJavaScripInterface.h */,
 				301AA76620AD3305006DED3A /* KZWDSJavaScripInterface.m */,
 				301AA76320AD3304006DED3A /* KZWJavascripModel.h */,
@@ -755,10 +760,11 @@
 				3059F34D20A1871400280644 /* KZWRequestServerstatus.m in Sources */,
 				3059F2DB20A1578100280644 /* KZWBdgeImage.m in Sources */,
 				3059F29E20A1549300280644 /* main.m in Sources */,
+				30DBD9DC20F703B000E8F257 /* KZWDebugService.m in Sources */,
 				3059F2DD20A1578100280644 /* KZWBdgeButton.m in Sources */,
 				3059F31320A1579500280644 /* UIColor+KZWColor.m in Sources */,
 				3059F2E020A1578100280644 /* UICountingLabel.m in Sources */,
-				3059F34020A184DD00280644 /* KZWHUD.h.m in Sources */,
+				3059F34020A184DD00280644 /* KZWHUD.m in Sources */,
 				3059F34320A1850200280644 /* KZWVersionModel.m in Sources */,
 				3059F33D20A17C1F00280644 /* LPDBRequestObject.m in Sources */,
 				3059F30920A1579500280644 /* UITabBarItem+WebCache.m in Sources */,
