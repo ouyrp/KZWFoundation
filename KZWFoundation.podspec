@@ -96,7 +96,7 @@ Pod::Spec.new do |s|
   s.subspec 'Content' do |ss|
     ss.source_files = 'Classes/**/*.{h,m}'
     ss.exclude_files = "Classes/KZWFoundationHear.h"
-    ss.frameworks = "MapKit" , "WebKit"
+    ss.frameworks = "MapKit" , "WebKit" , "AudioToolbox"
   end
 
   # s.public_header_files = "Classes/**/*.h"
