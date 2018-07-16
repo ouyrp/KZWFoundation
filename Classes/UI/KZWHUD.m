@@ -241,7 +241,13 @@
     [self.bgView addSubview:scrollerview];
     
     UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 30 - 20, KZW_iPhoneX?44:20, 30, 30)];
-    [backButton setImage:[UIImage imageNamed:@"bg_cancel"] forState:UIControlStateNormal];
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
+                            stringByAppendingPathComponent:@"/KZWFundation.bundle/KZWFundation.bundle"];
+    NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
+    UIImage *cancelimage = [UIImage imageNamed:@"cancelimage.png"
+                                      inBundle:resource_bundle
+                 compatibleWithTraitCollection:nil];
+    [backButton setImage:cancelimage forState:UIControlStateNormal];
     [self.bgView addSubview:backButton];
     
     @WeakObj(self)
