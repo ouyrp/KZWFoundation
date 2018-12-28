@@ -1,9 +1,0 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/Aspects" "${PODS_CONFIGURATION_BUILD_DIR}/FBRetainCycleDetector" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh" "${PODS_CONFIGURATION_BUILD_DIR}/MLeaksFinder" "${PODS_CONFIGURATION_BUILD_DIR}/Mantle" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SAMKeychain" "${PODS_CONFIGURATION_BUILD_DIR}/dsBridge"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Aspects/Aspects.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/MLeaksFinder/MLeaksFinder.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Mantle/Mantle.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/SAMKeychain/SAMKeychain.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/dsBridge/dsBridge.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "AFNetworking" -framework "Aspects" -framework "FBRetainCycleDetector" -framework "MBProgressHUD" -framework "MJRefresh" -framework "MLeaksFinder" -framework "Mantle" -framework "Masonry" -framework "SAMKeychain" -framework "dsBridge"
-PODS_BUILD_DIR = ${BUILD_DIR}
-PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
-PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
-PODS_ROOT = ${SRCROOT}/Pods
