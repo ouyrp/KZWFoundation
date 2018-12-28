@@ -46,7 +46,6 @@
 #import "KZWViewController.h"
 #import "KZWWebViewController.h"
 #import "LPDBItemViewControl.h"
-#import "KZWFoundationHear.h"
 #import "LPDBHttpManager.h"
 #import "LPDBModel.h"
 #import "LPDBRequestObject.h"

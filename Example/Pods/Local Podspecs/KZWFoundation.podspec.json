@@ -1,6 +1,6 @@
 {
   "name": "KZWFoundation",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "summary": "iOS 基本库",
   "description": "iOS基本库",
   "homepage": "https://github.com/ouyrp/KZWFoundation",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ouyrp/KZWFoundation.git",
-    "tag": "1.2.1"
+    "tag": "2.0.0"
   },
   "source_files": "KZWFoundation/Classes/KZWFoundationHear.h",
   "dependencies": {
@@ -46,7 +46,7 @@
       "resource_bundles": {
         "KZWFundation": "KZWFoundation/Assets/*"
       },
-      "exclude_files": "Classes/KZWFoundationHear.h",
+      "exclude_files": "KZWFoundation/Classes/KZWFoundationHear.h",
       "frameworks": [
         "MapKit",
         "WebKit",

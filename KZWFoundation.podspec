@@ -96,7 +96,7 @@ Pod::Spec.new do |s|
     s.subspec 'Content' do |ss|
         ss.source_files = 'KZWFoundation/Classes/**/*'
         ss.resource_bundle = { 'KZWFundation' => 'KZWFoundation/Assets/*' }
-        ss.exclude_files = "Classes/KZWFoundationHear.h"
+        ss.exclude_files = "KZWFoundation/Classes/KZWFoundationHear.h"
         ss.frameworks = "MapKit" , "WebKit" , "AudioToolbox"
     end
     
