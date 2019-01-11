@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ouy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "KZWWebViewController.h"
 #import "NSURL+ELMFoundation.h"
+#import <Foundation/Foundation.h>
 
 #define KZW_WEBVIEW_PATH @"path"
 #define KZW_TITLE @"title"
@@ -20,12 +20,12 @@
 #define KZW_BACK_TYPE @"backType"
 
 
-#define KZW_NAV_HIDDEN(x)                                                                                             \
-KZW_NAV_BAR_HIDDEN:                                                                                                 \
-@(x)
+#define KZW_NAV_HIDDEN(x) \
+    KZW_NAV_BAR_HIDDEN:   \
+    @(x)
 
-#define LPD_ROUTER_URL(path, params)                                                                                   \
-[NSString stringWithFormat:@"%@?%@", path, [NSURL elm_queryStringFromParameters:params]]
+#define LPD_ROUTER_URL(path, params) \
+    [NSString stringWithFormat:@"%@?%@", path, [NSURL elm_queryStringFromParameters:params]]
 
 
 @interface KZWRouterHelper : NSObject

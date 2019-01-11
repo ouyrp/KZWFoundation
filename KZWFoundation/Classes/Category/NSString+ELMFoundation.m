@@ -12,10 +12,7 @@
 @implementation NSString (ELMFoundation)
 
 + (BOOL)elm_isBlank:(NSString *)string {
-    return string == nil
-    || ![string isKindOfClass:[NSString class]]
-    || [string isEqualToString:@""]
-    || [[string elm_trim] isEqualToString:@""];
+    return string == nil || ![string isKindOfClass:[NSString class]] || [string isEqualToString:@""] || [[string elm_trim] isEqualToString:@""];
 }
 
 - (NSString *)elm_trim {
@@ -38,14 +35,12 @@
 }
 
 
-- (NSString *)elm_URLEncodedString
-{
+- (NSString *)elm_URLEncodedString {
     NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8));
     return result;
 }
 
-- (NSString *)elm_URLDecodedString
-{
+- (NSString *)elm_URLDecodedString {
     NSString *result = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)self, CFSTR(""), kCFStringEncodingUTF8));
     return result;
 }
@@ -59,40 +54,36 @@
 }
 
 + (NSString *)notRounding:(float)price afterPoint:(int)position {
-    NSDecimalNumberHandler* roundingBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:position raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumberHandler *roundingBehavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:position raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
     NSDecimalNumber *ouncesDecimal;
     NSDecimalNumber *roundedOunces;
-    
+
     ouncesDecimal = [[NSDecimalNumber alloc] initWithFloat:price];
     roundedOunces = [ouncesDecimal decimalNumberByRoundingAccordingToBehavior:roundingBehavior];
-    return [NSString stringWithFormat:@"%@",roundedOunces];
+    return [NSString stringWithFormat:@"%@", roundedOunces];
 }
 
 - (NSString *)imageURL {
     if ([self containsString:@"http"]) {
         return [self lpd_urlEncode];
-    }else {
+    } else {
         switch ([ELMEnvironmentManager environment]) {
             case ELMEnvBeta: {
                 NSString *urlString = [NSString stringWithFormat:@"http:%@", self];
                 return [urlString lpd_urlEncode];
-            }
-                break;
-            case ELMEnvAlpha:{
+            } break;
+            case ELMEnvAlpha: {
                 NSString *urlString = [NSString stringWithFormat:@"http:%@", self];
                 return [urlString lpd_urlEncode];
-            }
-                break;
+            } break;
             case ELMEnvProduction: {
                 NSString *urlString = [NSString stringWithFormat:@"https:%@", self];
                 return [urlString lpd_urlEncode];
-            }
-                break;
+            } break;
             default: {
                 NSString *urlString = [NSString stringWithFormat:@"https:%@", self];
                 return [urlString lpd_urlEncode];
-            }
-                break;
+            } break;
         }
     }
 }

@@ -1,0 +1,15 @@
+---
+Language:        Cpp
+BasedOnStyle:    LLVM
+AccessModifierOffset: -4
+AlignAfterOpenBracket: DontAlign
+AlignOperands:   false
+AlignTrailingComments: false
+ColumnLimit:     0
+IndentWidth:     4
+IndentCaseLabels: true
+MaxEmptyLinesToKeep:  2
+ObjCBlockIndentWidth: 4
+ObjCSpaceAfterProperty: true
+...
+

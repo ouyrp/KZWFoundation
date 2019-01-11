@@ -10,6 +10,6 @@
 
 @interface UILabel (KZWLineSpace)
 
--(void)setLineSpace:(CGFloat)lineSpace withText:(NSString *)text;
+- (void)setLineSpace:(CGFloat)lineSpace withText:(NSString *)text;
 
 @end

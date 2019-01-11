@@ -13,21 +13,22 @@ static ELMEnvironment Environment = ELMEnvProduction;
 NSString *const ELMNotificationWillChangeEnvironment = @"ELMNotificaitonWillChangeNotification";
 NSString *const ELMNotificationDidChangeEnvironment = @"ELMNotificationDidChangeEnvironment";
 
-#define execute_block_on_main_thread($block) \
-    if ($block) { \
-        if ([[NSThread currentThread] isMainThread]) { \
-            $block(); \
-        } else { \
+#define execute_block_on_main_thread($block)            \
+    if ($block) {                                       \
+        if ([[NSThread currentThread] isMainThread]) {  \
+            $block();                                   \
+        } else {                                        \
             dispatch_sync(dispatch_get_main_queue(), ^{ \
-                $block();\
-            }); \
-        } \
+                $block();                               \
+            });                                         \
+        }                                               \
     }
 
 @implementation ELMEnvironmentManager
 
 + (void)setEnvironment:(ELMEnvironment)environment {
-    if (Environment == environment) return;
+    if (Environment == environment)
+        return;
 
     execute_block_on_main_thread(^{
         [[NSNotificationCenter defaultCenter] postNotificationName:ELMNotificationWillChangeEnvironment object:nil];

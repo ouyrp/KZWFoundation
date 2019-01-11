@@ -9,8 +9,8 @@
 #import "ELMKeychainUtil.h"
 #import <SAMKeychain/SAMKeychain.h>
 
-static NSString * const ELEME_SERVICE_NAME = @"ElemeService";
-static NSString * const ELEME_ACCOUNT_NAME = @"ElemeAccount";
+static NSString *const ELEME_SERVICE_NAME = @"ElemeService";
+static NSString *const ELEME_ACCOUNT_NAME = @"ElemeAccount";
 
 @implementation ELMKeychainUtil
 

@@ -6,14 +6,14 @@
 //  Copyright © 2017年 ouy. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "ZYImageCacheManager.h"
+#import <UIKit/UIKit.h>
 
 @interface UIImageView (KZWCache)
 
-- (void)zy_setImageWithURL:(NSString* )urlString withImage:(UIImage *)placeholderImage;
+- (void)zy_setImageWithURL:(NSString *)urlString withImage:(UIImage *)placeholderImage;
 
 //从网址下载图片，没下载完毕前，显示占位图片
-- (void)zy_setImageWithURL:(NSString* )urlString placeholderImage:(UIImage* )placeholderImage;
+- (void)zy_setImageWithURL:(NSString *)urlString placeholderImage:(UIImage *)placeholderImage;
 
 @end

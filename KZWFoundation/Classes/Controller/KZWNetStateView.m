@@ -7,15 +7,15 @@
 //
 
 #import "KZWNetStateView.h"
-#import "KZWRequestServerstatus.h"
 #import "KZWConstants.h"
-#import "UIColor+KZWColor.h"
+#import "KZWRequestServerstatus.h"
+#import "LPDBRequestObject.h"
 #import "UIButton+KZWButton.h"
+#import "UIColor+KZWColor.h"
 #import "UILabel+KZWLabel.h"
 #import <AFNetworking/AFNetworking.h>
-#import "LPDBRequestObject.h"
 
-@interface KZWNetStateView()
+@interface KZWNetStateView ()
 
 @property (assign, nonatomic) SEL action;
 @property (strong, nonatomic) UIImage *bgImage;
@@ -30,7 +30,7 @@
         self.hidden = YES;
         self.backgroundColor = [UIColor whiteColor];
         NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
-                                stringByAppendingPathComponent:@"/KZWFundation.bundle"];
+            stringByAppendingPathComponent:@"/KZWFundation.bundle"];
         NSBundle *resource_bundle = [NSBundle bundleWithPath:bundlePath];
         self.bgImage = [UIImage imageNamed:@"bg_server.png"
                                   inBundle:resource_bundle
@@ -41,15 +41,15 @@
     }
     return self;
 }
-    
+
 - (UIImageView *)netImage {
     if (!_netImage) {
-        _netImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 266/2)/2, 150, 266/2, 204/2)];
+        _netImage = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - 266 / 2) / 2, 150, 266 / 2, 204 / 2)];
         _netImage.image = self.bgImage;
     }
     return _netImage;
 }
-    
+
 - (UILabel *)netLabel {
     if (!_netLabel) {
         _netLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.netImage.frame), SCREEN_WIDTH, 40)];
@@ -63,20 +63,20 @@
 
 - (UIButton *)button {
     if (!_button) {
-        _button = [[UIButton alloc] initWithType:KZWButtonTypeLine normalTitle:@"刷新" titleFont:16 cornerRadius:75/4];
-        _button.frame = CGRectMake(SCREEN_WIDTH/2 - 280/4, CGRectGetMaxY(self.netImage.frame) + 40, 280/2, 75/2);
+        _button = [[UIButton alloc] initWithType:KZWButtonTypeLine normalTitle:@"刷新" titleFont:16 cornerRadius:75 / 4];
+        _button.frame = CGRectMake(SCREEN_WIDTH / 2 - 280 / 4, CGRectGetMaxY(self.netImage.frame) + 40, 280 / 2, 75 / 2);
         [_button addTarget:self action:@selector(removeNotice) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
 }
-    
+
 - (void)addTouchAction {
     UITapGestureRecognizer *singleTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeNotice)];
+        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeNotice)];
     [self addGestureRecognizer:singleTap];
     singleTap.cancelsTouchesInView = NO;
 }
-    
+
 - (void)netState {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     switch (manager.networkReachabilityStatus) {
@@ -85,32 +85,28 @@
             self.hidden = NO;
             self.netImage.image = self.bgImage;
             self.netLabel.text = @"网络似乎断了，请刷新重试";
-        }
-        break;
+        } break;
         case AFNetworkReachabilityStatusNotReachable: {
             NSLog(@"没有网络");
             self.hidden = NO;
             self.netImage.image = self.bgImage;
             self.netLabel.text = @"网络似乎断了，请刷新重试";
-        }
-        break;
+        } break;
         case AFNetworkReachabilityStatusReachableViaWWAN: {
             NSLog(@"手机自带网络");
             self.netImage.image = self.bgImage;
             self.netLabel.text = @"网络似乎断了，请刷新重试";
             [self serverStatus];
-        }
-        break;
+        } break;
         case AFNetworkReachabilityStatusReachableViaWiFi: {
             NSLog(@"WIFI");
             self.netImage.image = self.bgImage;
             self.netLabel.text = @"网络似乎断了，请刷新重试";
             [self serverStatus];
-        }
-        break;
+        } break;
     }
 }
-    
+
 - (void)serverStatus {
     KZWRequestServerstatus *requestServerstatus = [KZWRequestServerstatus new];
     [requestServerstatus startRequestComplete:^(id object, NSError *error) {
@@ -121,12 +117,12 @@
         }
     }];
 }
-    
+
 - (void)showLoadFailedNoticeWithAction:(SEL)action isWeb:(BOOL)isWeb {
     _action = action;
     if (isWeb) {
         [self netState];
-    }else{
+    } else {
         [self netState];
         self.hidden = NO;
     }
@@ -139,7 +135,6 @@
         }
         self.action = nil;
     }
-    
 }
 
 @end

@@ -12,40 +12,39 @@
 #define kUILabelCounterRate 3.0
 #endif
 
-@protocol UILabelCounter<NSObject>
+@protocol UILabelCounter <NSObject>
 
--(CGFloat)update:(CGFloat)t;
-
-@end
-
-@interface UILabelCounterLinear : NSObject<UILabelCounter>
+- (CGFloat)update:(CGFloat)t;
 
 @end
 
-@interface UILabelCounterEaseIn : NSObject<UILabelCounter>
+@interface UILabelCounterLinear : NSObject <UILabelCounter>
 
 @end
 
-@interface UILabelCounterEaseOut : NSObject<UILabelCounter>
+@interface UILabelCounterEaseIn : NSObject <UILabelCounter>
 
 @end
 
-@interface UILabelCounterEaseInOut : NSObject<UILabelCounter>
+@interface UILabelCounterEaseOut : NSObject <UILabelCounter>
 
 @end
 
-@interface UILabelCounterEaseInBounce : NSObject<UILabelCounter>
+@interface UILabelCounterEaseInOut : NSObject <UILabelCounter>
 
 @end
 
-@interface UILabelCounterEaseOutBounce : NSObject<UILabelCounter>
+@interface UILabelCounterEaseInBounce : NSObject <UILabelCounter>
+
+@end
+
+@interface UILabelCounterEaseOutBounce : NSObject <UILabelCounter>
 
 @end
 
 @implementation UILabelCounterLinear
 
--(CGFloat)update:(CGFloat)t
-{
+- (CGFloat)update:(CGFloat)t {
     return t;
 }
 
@@ -53,8 +52,7 @@
 
 @implementation UILabelCounterEaseIn
 
--(CGFloat)update:(CGFloat)t
-{
+- (CGFloat)update:(CGFloat)t {
     return powf(t, kUILabelCounterRate);
 }
 
@@ -62,19 +60,18 @@
 
 @implementation UILabelCounterEaseOut
 
--(CGFloat)update:(CGFloat)t{
-    return 1.0-powf((1.0-t), kUILabelCounterRate);
+- (CGFloat)update:(CGFloat)t {
+    return 1.0 - powf((1.0 - t), kUILabelCounterRate);
 }
 
 @end
 
 @implementation UILabelCounterEaseInOut
 
--(CGFloat) update: (CGFloat) t
-{
+- (CGFloat)update:(CGFloat)t {
     t *= 2;
     if (t < 1)
-        return 0.5f * powf (t, kUILabelCounterRate);
+        return 0.5f * powf(t, kUILabelCounterRate);
     else
         return 0.5f * (2.0f - powf(2.0 - t, kUILabelCounterRate));
 }
@@ -83,44 +80,42 @@
 
 @implementation UILabelCounterEaseInBounce
 
--(CGFloat) update: (CGFloat) t {
-    
+- (CGFloat)update:(CGFloat)t {
+
     if (t < 4.0 / 11.0) {
         return 1.0 - (powf(11.0 / 4.0, 2) * powf(t, 2)) - t;
     }
-    
+
     if (t < 8.0 / 11.0) {
         return 1.0 - (3.0 / 4.0 + powf(11.0 / 4.0, 2) * powf(t - 6.0 / 11.0, 2)) - t;
     }
-    
+
     if (t < 10.0 / 11.0) {
-        return 1.0 - (15.0 /16.0 + powf(11.0 / 4.0, 2) * powf(t - 9.0 / 11.0, 2)) - t;
+        return 1.0 - (15.0 / 16.0 + powf(11.0 / 4.0, 2) * powf(t - 9.0 / 11.0, 2)) - t;
     }
-    
+
     return 1.0 - (63.0 / 64.0 + powf(11.0 / 4.0, 2) * powf(t - 21.0 / 22.0, 2)) - t;
-    
 }
 
 @end
 
 @implementation UILabelCounterEaseOutBounce
 
--(CGFloat) update: (CGFloat) t {
-    
+- (CGFloat)update:(CGFloat)t {
+
     if (t < 4.0 / 11.0) {
         return powf(11.0 / 4.0, 2) * powf(t, 2);
     }
-    
+
     if (t < 8.0 / 11.0) {
         return 3.0 / 4.0 + powf(11.0 / 4.0, 2) * powf(t - 6.0 / 11.0, 2);
     }
-    
+
     if (t < 10.0 / 11.0) {
-        return 15.0 /16.0 + powf(11.0 / 4.0, 2) * powf(t - 9.0 / 11.0, 2);
+        return 15.0 / 16.0 + powf(11.0 / 4.0, 2) * powf(t - 9.0 / 11.0, 2);
     }
-    
+
     return 63.0 / 64.0 + powf(11.0 / 4.0, 2) * powf(t - 21.0 / 22.0, 2);
-    
 }
 
 @end
@@ -143,25 +138,25 @@
 
 @implementation UICountingLabel
 
--(void)countFrom:(CGFloat)value to:(CGFloat)endValue {
-    
+- (void)countFrom:(CGFloat)value to:(CGFloat)endValue {
+
     if (self.animationDuration == 0.0f) {
         self.animationDuration = 2.0f;
     }
-    
+
     [self countFrom:value to:endValue withDuration:self.animationDuration];
 }
 
--(void)countFrom:(CGFloat)startValue to:(CGFloat)endValue withDuration:(NSTimeInterval)duration {
-    
+- (void)countFrom:(CGFloat)startValue to:(CGFloat)endValue withDuration:(NSTimeInterval)duration {
+
     self.startingValue = startValue;
     self.destinationValue = endValue;
-    
+
     // remove any (possible) old timers
     [self.timer invalidate];
     self.timer = nil;
-    
-    if(self.format == nil) {
+
+    if (self.format == nil) {
         self.format = @"%f";
     }
     if (duration == 0.0) {
@@ -176,8 +171,7 @@
     self.totalTime = duration;
     self.lastUpdate = [NSDate timeIntervalSinceReferenceDate];
 
-    switch(self.method)
-    {
+    switch (self.method) {
         case UILabelCountingMethodLinear:
             self.counter = [[UILabelCounterLinear alloc] init];
             break;
@@ -222,54 +216,49 @@
 }
 
 - (void)updateValue:(NSTimer *)timer {
-    
+
     // update progress
     NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
     self.progress += now - self.lastUpdate;
     self.lastUpdate = now;
-    
+
     if (self.progress >= self.totalTime) {
         [self.timer invalidate];
         self.timer = nil;
         self.progress = self.totalTime;
     }
-    
+
     [self setTextValue:[self currentValue]];
-    
+
     if (self.progress == self.totalTime) {
         [self runCompletionBlock];
     }
 }
 
-- (void)setTextValue:(CGFloat)value
-{
+- (void)setTextValue:(CGFloat)value {
     if (self.attributedFormatBlock != nil) {
         self.attributedText = self.attributedFormatBlock(value);
-    }
-    else if(self.formatBlock != nil)
-    {
+    } else if (self.formatBlock != nil) {
         self.text = self.formatBlock(value);
-    }
-    else
-    {
+    } else {
         if (self.positiveFormat.length > 0) {
             NSString *str = [NSString stringWithFormat:self.format, value];
             NSNumberFormatter *formater = [[NSNumberFormatter alloc] init];
             formater.numberStyle = NSNumberFormatterDecimalStyle;
             [formater setPositiveFormat:self.positiveFormat];
             self.text = [NSString stringWithFormat:@"%@", [formater stringFromNumber:[NSNumber numberWithFloat:[str floatValue]]]];
-        }else {
-            self.text = [NSString stringWithFormat:self.format,value];
+        } else {
+            self.text = [NSString stringWithFormat:self.format, value];
         }
         // check if counting with ints - cast to int
-//        if([self.format rangeOfString:@"%(.*)d" options:NSRegularExpressionSearch].location != NSNotFound || [self.format rangeOfString:@"%(.*)i"].location != NSNotFound )
-//        {
-//            self.text = [NSString stringWithFormat:self.format,(int)value];
-//        }
-//        else
-//        {
-//            self.text = [NSString stringWithFormat:self.format,value];
-//        }
+        //        if([self.format rangeOfString:@"%(.*)d" options:NSRegularExpressionSearch].location != NSNotFound || [self.format rangeOfString:@"%(.*)i"].location != NSNotFound )
+        //        {
+        //            self.text = [NSString stringWithFormat:self.format,(int)value];
+        //        }
+        //        else
+        //        {
+        //            self.text = [NSString stringWithFormat:self.format,value];
+        //        }
     }
 }
 
@@ -280,7 +269,7 @@
 }
 
 - (void)runCompletionBlock {
-    
+
     if (self.completionBlock) {
         self.completionBlock();
         self.completionBlock = nil;
@@ -288,11 +277,11 @@
 }
 
 - (CGFloat)currentValue {
-    
+
     if (self.progress >= self.totalTime) {
         return self.destinationValue;
     }
-    
+
     CGFloat percent = self.progress / self.totalTime;
     CGFloat updateVal = [self.counter update:percent];
     return self.startingValue + (updateVal * (self.destinationValue - self.startingValue));

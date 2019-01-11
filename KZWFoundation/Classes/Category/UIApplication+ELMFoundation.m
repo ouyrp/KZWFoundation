@@ -11,21 +11,21 @@
 @implementation UIApplication (ELMFoundation)
 
 + (NSString *)elm_version {
-  return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
 
 + (NSString *)elm_bundleID {
-  return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
 }
 
-+ (NSString *)elm_userAgent{
-    return  [NSMutableString stringWithString:[[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"]];
++ (NSString *)elm_userAgent {
+    return [NSMutableString stringWithString:[[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"]];
 }
 
 + (void)elm_clearAllLocalNotifications {
-  [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-  [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-  [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 

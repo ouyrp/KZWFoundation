@@ -9,7 +9,7 @@
 @implementation UITabBarItem (WebCache)
 
 - (void)zy_setImageWithURL:(NSString *)urlString withImage:(UIImage *)placeholderImage {
-    
+
     [[ZYImageCacheManager sharedImageCacheManager] getImageWithUrl:urlString complete:^(UIImage *image) {
         //使用图片
         if (image == NULL) {

@@ -5,15 +5,16 @@
 //  Created by sq on 15/11/4.
 //  Copyright © 2015年 elm. All rights reserved.
 //
+#import "LPDBHttpManager.h"
 #import <Foundation/Foundation.h>
 #import <Mantle/MTLModel.h>
-#import "LPDBHttpManager.h"
 
 typedef NS_ENUM(NSUInteger, LPDHTTPMethod) {
-  LPDHTTPMethodGet,
-  LPDHTTPMethodPost,
-  LPDHTTPMethodPut,
-  LPDHTTPMethodDelete,
+    LPDHTTPMethodGet,
+    LPDHTTPMethodPost,
+    LPDHTTPMethodPut,
+    LPDHTTPMethodDelete,
+    LPDHTTPMethodImage,
 };
 
 typedef void (^LPDBRequestComplete)(id object, NSError *error);
@@ -30,6 +31,10 @@ typedef void (^LPDBRequestComplete)(id object, NSError *error);
 
 @property (nonatomic, strong) NSArray *images;
 
+@property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, copy) NSString *imageName;
+
 @property (nonatomic, strong) NSDictionary *paramDic;
 
 @property (nonatomic, assign) LPDHTTPMethod method;
@@ -38,7 +43,7 @@ typedef void (^LPDBRequestComplete)(id object, NSError *error);
 
 - (void)startRequestComplete:(LPDBRequestComplete)complete;
 
-- (void)startRequestComplete:(LPDBRequestComplete)complete progress:(void (^)(NSProgress * uploadProgress)) progress;
+- (void)startRequestComplete:(LPDBRequestComplete)complete progress:(void (^)(NSProgress *uploadProgress))progress;
 
 - (void)cancel;
 

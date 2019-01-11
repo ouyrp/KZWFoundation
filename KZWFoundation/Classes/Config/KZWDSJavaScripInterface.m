@@ -12,12 +12,12 @@
 @implementation KZWDSJavaScripInterface
 
 - (void)share:(id)data {
-    NSLog(@"data class: %@, body is %@",[data class], [data debugDescription]);
+    NSLog(@"data class: %@, body is %@", [data class], [data debugDescription]);
     NSError *error = nil;
     KZWShareModel *model = [MTLJSONAdapter modelOfClass:KZWShareModel.class fromJSONDictionary:data error:&error];
-//    [KZWShareService wxShareWithImages:@[model.imageUrl] shareTitle:model.title shareContent:model.content shareURLString:model.url response:^(id responseData) {
-//
-//    }];
+    //    [KZWShareService wxShareWithImages:@[model.imageUrl] shareTitle:model.title shareContent:model.content shareURLString:model.url response:^(id responseData) {
+    //
+    //    }];
 }
 
 - (void)setNavTitle:(id)data {

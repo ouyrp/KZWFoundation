@@ -11,8 +11,8 @@
 
 @interface KZWCorrectLocation : NSObject
 
-+(BOOL)isLocationOutOfChina:(CLLocationCoordinate2D)location;
++ (BOOL)isLocationOutOfChina:(CLLocationCoordinate2D)location;
 //转GCJ-02
-+(CLLocationCoordinate2D)transformFromWGSToGCJ:(CLLocationCoordinate2D)wgsLoc;
++ (CLLocationCoordinate2D)transformFromWGSToGCJ:(CLLocationCoordinate2D)wgsLoc;
 
 @end

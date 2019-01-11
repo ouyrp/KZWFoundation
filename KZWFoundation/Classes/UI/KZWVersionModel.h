@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ouyang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "LPDBModel.h"
+#import <Foundation/Foundation.h>
 
 @interface KZWVersionModel : LPDBModel
 

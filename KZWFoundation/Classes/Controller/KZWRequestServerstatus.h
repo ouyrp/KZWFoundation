@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ouy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "LPDBRequestObject.h"
+#import <Foundation/Foundation.h>
 
 @interface KZWRequestServerstatus : LPDBRequestObject
 

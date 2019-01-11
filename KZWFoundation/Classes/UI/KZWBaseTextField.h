@@ -24,6 +24,6 @@ typedef NS_ENUM(NSUInteger, KZWTextFieldType) {
 @property (strong, nonatomic) UITextField *textField;
 
 @property (copy, nonatomic) NSString *text;
-- (void)setText:(NSString *) text;
+- (void)setText:(NSString *)text;
 
 @end

@@ -15,8 +15,8 @@ static NSString *LPDBNetworkUserMessage = @"userErrorMessage";
 static NSString *LPDBNetworkBusinessErrorCode = @"businessErrorCode";
 
 typedef NS_ENUM(NSUInteger, LPDBNeteworkErrorCode) {
-  LPDBNeteworkResponseDataError = 300,
-  LPDBNeteworkBusinessError = 500,
+    LPDBNeteworkResponseDataError = 300,
+    LPDBNeteworkBusinessError = 500,
 };
 
 @interface NSError (LPDBErrorMessage)

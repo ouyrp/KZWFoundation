@@ -14,12 +14,11 @@ const double pi = 3.14159265358979324;
 
 @implementation KZWCorrectLocation
 
-+(CLLocationCoordinate2D)transformFromWGSToGCJ:(CLLocationCoordinate2D)wgsLoc
-{
++ (CLLocationCoordinate2D)transformFromWGSToGCJ:(CLLocationCoordinate2D)wgsLoc {
     CLLocationCoordinate2D adjustLoc;
-    if([self isLocationOutOfChina:wgsLoc]){
+    if ([self isLocationOutOfChina:wgsLoc]) {
         adjustLoc = wgsLoc;
-    }else{
+    } else {
         double adjustLat = [self transformLatWithX:wgsLoc.longitude - 105.0 withY:wgsLoc.latitude - 35.0];
         double adjustLon = [self transformLonWithX:wgsLoc.longitude - 105.0 withY:wgsLoc.latitude - 35.0];
         double radLat = wgsLoc.latitude / 180.0 * pi;
@@ -35,24 +34,21 @@ const double pi = 3.14159265358979324;
 }
 
 //判断是不是在中国
-+(BOOL)isLocationOutOfChina:(CLLocationCoordinate2D)location
-{
++ (BOOL)isLocationOutOfChina:(CLLocationCoordinate2D)location {
     if (location.longitude < 72.004 || location.longitude > 137.8347 || location.latitude < 0.8293 || location.latitude > 55.8271)
         return YES;
     return NO;
 }
 
-+(double)transformLatWithX:(double)x withY:(double)y
-{
++ (double)transformLatWithX:(double)x withY:(double)y {
     double lat = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * sqrt(abs(x));
-    lat += (20.0 * sin(6.0 * x * pi) + 20.0 *sin(2.0 * x * pi)) * 2.0 / 3.0;
+    lat += (20.0 * sin(6.0 * x * pi) + 20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0;
     lat += (20.0 * sin(y * pi) + 40.0 * sin(y / 3.0 * pi)) * 2.0 / 3.0;
     lat += (160.0 * sin(y / 12.0 * pi) + 320 * sin(y * pi / 30.0)) * 2.0 / 3.0;
     return lat;
 }
 
-+(double)transformLonWithX:(double)x withY:(double)y
-{
++ (double)transformLonWithX:(double)x withY:(double)y {
     double lon = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * sqrt(abs(x));
     lon += (20.0 * sin(6.0 * x * pi) + 20.0 * sin(2.0 * x * pi)) * 2.0 / 3.0;
     lon += (20.0 * sin(x * pi) + 40.0 * sin(x / 3.0 * pi)) * 2.0 / 3.0;

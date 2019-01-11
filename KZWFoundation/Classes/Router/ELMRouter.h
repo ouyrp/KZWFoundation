@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 0oneo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "UIViewController+ELMRouter.h"
+#import <UIKit/UIKit.h>
 
 typedef void (^ELMRouterOpenCallback)(NSDictionary *params);
 
 typedef NS_ENUM(NSUInteger, ELMPageShowStyle) {
-  ELMPageShowStyleCustom,
-  ELMPageShowStylePush,
-  ELMPageShowStyleModal
+    ELMPageShowStyleCustom,
+    ELMPageShowStylePush,
+    ELMPageShowStyleModal
 };
 
 @interface ELMRouterOptions : NSObject

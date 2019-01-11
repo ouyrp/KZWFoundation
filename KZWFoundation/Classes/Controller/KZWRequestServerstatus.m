@@ -9,8 +9,8 @@
 #import "KZWRequestServerstatus.h"
 
 @implementation KZWRequestServerstatus
-    
-- (instancetype)init{
+
+- (instancetype)init {
     if (self = [super init]) {
         self.path = @"app/serverstatus";
     }

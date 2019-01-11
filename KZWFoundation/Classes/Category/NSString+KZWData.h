@@ -11,13 +11,13 @@
 
 @interface NSString (KZWData)
 
-+ (NSString *)stringWithData:(NSInteger)time ;
++ (NSString *)stringWithData:(NSInteger)time;
 
 + (NSString *)stringWithDay:(NSInteger)time;
 
 + (NSString *)stringWithHour:(NSInteger)time;
 
-+ (NSString*)getCurrentTimestamp;
++ (NSString *)getCurrentTimestamp;
 
 - (NSString *)md5;
 

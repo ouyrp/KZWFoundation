@@ -11,31 +11,30 @@
 
 @implementation LPDBModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-  NSMutableDictionary *dic = [[[self new] propertyToproperty] mutableCopy];
-  for (NSString *key in [self mapKey].allKeys) {
-    if ([dic.allKeys containsObject:key]) {
-      dic[key] = [self mapKey][key];
+    NSMutableDictionary *dic = [[[self new] propertyToproperty] mutableCopy];
+    for (NSString *key in [self mapKey].allKeys) {
+        if ([dic.allKeys containsObject:key]) {
+            dic[key] = [self mapKey][key];
+        }
     }
-  }
-  for (NSString *key in [self filter]) {
-    [dic setValue:nil forKey:key];
-  }
-  return [dic copy];
+    for (NSString *key in [self filter]) {
+        [dic setValue:nil forKey:key];
+    }
+    return [dic copy];
 }
 
 + (NSDictionary *)mapKey {
-  return nil;
+    return nil;
 }
 
 + (NSArray *)filter {
-  return nil;
+    return nil;
 }
 
 - (void)setNilValueForKey:(NSString *)key {
 #ifdef DEBUG
     NSLog(@"%@ is nil", key);
 #endif
-    
 }
 
 @end

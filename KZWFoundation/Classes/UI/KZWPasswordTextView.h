@@ -13,7 +13,7 @@
 /**
  the password is user inputed
  */
-@property (nonatomic, copy) void(^passwordDidChangeBlock)(NSString *password);
+@property (nonatomic, copy) void (^passwordDidChangeBlock)(NSString *password);
 
 /**
  set element count, default is 4, remove all elements and creat new elemets when it was set

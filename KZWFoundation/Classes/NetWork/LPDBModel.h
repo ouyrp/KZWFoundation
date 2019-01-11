@@ -5,11 +5,11 @@
 //  Created by sq on 15/11/6.
 //  Copyright © 2015年 elm. All rights reserved.
 //
+#import "MTLModel.h"
 #import <Foundation/Foundation.h>
 #import <Mantle/MTLJSONAdapter.h>
-#import "MTLModel.h"
 
-@interface LPDBModel : MTLModel<MTLJSONSerializing>
+@interface LPDBModel : MTLModel <MTLJSONSerializing>
 /**
  *  json key 值映射
  *  属性名与json key

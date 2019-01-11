@@ -15,17 +15,17 @@
 @end
 
 @interface KZWNetStateView : UIView
-    
+
 - (instancetype)initWithFrame:(CGRect)frame;
-    
+
 @property (strong, nonatomic) UIImageView *netImage;
-    
+
 @property (strong, nonatomic) UILabel *netLabel;
 
 @property (strong, nonatomic) UIButton *button;
 
 @property (nonatomic, weak) id<netStatueViewDelegate> delegate;
-    
+
 - (void)showLoadFailedNoticeWithAction:(SEL)action isWeb:(BOOL)isWeb;
 
 @end

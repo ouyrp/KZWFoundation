@@ -7,21 +7,21 @@
 //
 
 #import "KZWViewController.h"
-#import "KZWNetStateView.h"
-#import <MBProgressHUD/MBProgressHUD.h>
-#import <objc/runtime.h>
-#import "UIColor+KZWColor.h"
 #import "KZWConstants.h"
+#import "KZWDebugService.h"
+#import "KZWHUD.h"
+#import "KZWNetStateView.h"
+#import "UIColor+KZWColor.h"
 #import "UIViewController+ELMRouter.h"
 #import <AudioToolbox/AudioToolbox.h>
-#import "KZWHUD.h"
-#import "KZWDebugService.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <objc/runtime.h>
 
-@interface KZWViewController ()<netStatueViewDelegate>
+@interface KZWViewController () <netStatueViewDelegate>
 
 @property (strong, nonatomic) UIImageView *navBarHairlineImageView;
 @property (strong, nonatomic) KZWNetStateView *netStatueView;
-@property (strong,nonatomic) MBProgressHUD *hud;
+@property (strong, nonatomic) MBProgressHUD *hud;
 
 @end
 
@@ -35,13 +35,12 @@
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setBarTintColor:[UIColor baseColor]];
     self.navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationController.navigationBar];
-    
+
     // 1.把返回文字的标题设置为空字符串(A和B都是UIViewController)
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 #if DEBUG
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
 #endif
-    
 }
 
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
@@ -74,9 +73,9 @@
 }
 
 - (void)showProgress {
-    MBProgressHUD *progress= objc_getAssociatedObject(self,@"lpd_progress");
+    MBProgressHUD *progress = objc_getAssociatedObject(self, @"lpd_progress");
     if (!progress) {
-        progress = [[MBProgressHUD alloc]initWithView:self.view];
+        progress = [[MBProgressHUD alloc] initWithView:self.view];
         objc_setAssociatedObject(self, @"lpd_progress", progress, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self.view addSubview:progress];
     }
@@ -86,7 +85,7 @@
 }
 
 - (void)hideProgess {
-    MBProgressHUD *progress= objc_getAssociatedObject(self,@"lpd_progress");
+    MBProgressHUD *progress = objc_getAssociatedObject(self, @"lpd_progress");
     [progress hideAnimated:NO];
 }
 
@@ -110,30 +109,28 @@
     self.netStatueView.hidden = YES;
 }
 
-- (void) motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     //检测到摇动开始
-    if (motion == UIEventSubtypeMotionShake)
-    {
+    if (motion == UIEventSubtypeMotionShake) {
         // your code
         NSLog(@"检测到摇动开始");
     }
 }
 
-- (void) motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     //摇动取消KZWDebugService
     NSLog(@"摇动取消");
 }
 
-- (void) motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     //摇动结束
     if (event.subtype == UIEventSubtypeMotionShake) {
         // your code
         NSLog(@"摇动结束");
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);//振动效果 需要#import <AudioToolbox/AudioToolbox.h>
-        
-        NSString *message = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:[KZWDebugService currentDebug] options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];  //对展示进行格式化处理
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate); //振动效果 需要#import <AudioToolbox/AudioToolbox.h>
+
+        NSString *message = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:[KZWDebugService currentDebug] options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding]; //对展示进行格式化处理
         [[KZWHUD sharedKZWHUD] showDebug:message];
-        
     }
 }
 

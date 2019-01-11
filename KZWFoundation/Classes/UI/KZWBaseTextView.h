@@ -15,6 +15,6 @@
 @property (strong, nonatomic) UITextView *textView;
 
 @property (copy, nonatomic) NSString *text;
-- (void)setText:(NSString *) text;
+- (void)setText:(NSString *)text;
 
 @end

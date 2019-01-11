@@ -7,12 +7,12 @@
 //
 
 #import "KZWBaseTextView.h"
-#import "UIColor+KZWColor.h"
 #import "KZWConstants.h"
 #import "UIButton+KZWButton.h"
+#import "UIColor+KZWColor.h"
 #import "UILabel+KZWLabel.h"
 
-@interface KZWBaseTextView()<UITextViewDelegate>
+@interface KZWBaseTextView () <UITextViewDelegate>
 
 @property (strong, nonatomic) UIToolbar *toolbar;
 
@@ -24,7 +24,7 @@
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.textView];
         self.textView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        self.textView.font =  [UIFont systemFontOfSize:font];
+        self.textView.font = [UIFont systemFontOfSize:font];
     }
     return self;
 }
@@ -52,8 +52,7 @@
     return YES;
 }
 
-- (UIToolbar *)toolbar
-{
+- (UIToolbar *)toolbar {
     if (!_toolbar) {
         CGRect tempFrame = CGRectMake(0, 0, SCREEN_WIDTH, 40);
         _toolbar = [[UIToolbar alloc] initWithFrame:tempFrame];
@@ -72,7 +71,7 @@
             end.frame = CGRectMake(0, 0, 40, 40);
             end;
         })];
-        _toolbar.items = @[bgItem, spaceItem, endItem];
+        _toolbar.items = @[ bgItem, spaceItem, endItem ];
     }
     return _toolbar;
 }
@@ -85,29 +84,27 @@
     NSString *toBeString = textView.text;
     toBeString = [self filterCharactor:textView.text withRegex:@"[^a-zA-Z0-9\u4e00-\u9fa5]"];
     NSString *lang = [[UITextInputMode currentInputMode] primaryLanguage];
-    if([lang isEqualToString:@"zh-Hans"]) {
+    if ([lang isEqualToString:@"zh-Hans"]) {
         UITextRange *selectedRange = [textView markedTextRange];
         UITextPosition *position = [textView positionFromPosition:selectedRange.start offset:0];
-        if(!position) {
-            if(toBeString.length > 50) {
+        if (!position) {
+            if (toBeString.length > 50) {
                 textView.text = [toBeString substringToIndex:50];
-            }else {
+            } else {
                 textView.text = toBeString;
             }
+        } else {
         }
-        else{
-        }
-    }
-    else{
-        if(toBeString.length > 50) {
+    } else {
+        if (toBeString.length > 50) {
             textView.text = [toBeString substringToIndex:50];
-        }else {
+        } else {
             textView.text = toBeString;
         }
     }
 }
 
-- (NSString *)filterCharactor:(NSString *)string withRegex:(NSString *)regexStr{
+- (NSString *)filterCharactor:(NSString *)string withRegex:(NSString *)regexStr {
     NSString *filterText = string;
     NSError *error = NULL;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexStr options:NSRegularExpressionCaseInsensitive error:&error];

@@ -10,9 +10,9 @@
 
 @interface UIScrollView (KZWRefresh)
 
-- (void)addHeaderRefreshWithCallback:(nullable void(^)())callback;
+- (void)addHeaderRefreshWithCallback:(nullable void (^)())callback;
 
-- (void)addFooterRefreshWithCallback:(nullable void(^)())callback;
+- (void)addFooterRefreshWithCallback:(nullable void (^)())callback;
 
 - (void)headerBeginRefreshing;
 

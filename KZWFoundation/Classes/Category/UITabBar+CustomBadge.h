@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, CustomBadgeType){
+typedef NS_ENUM(NSUInteger, CustomBadgeType) {
     kCustomBadgeStyleRedDot,
     kCustomBadgeStyleNumber,
     kCustomBadgeStyleNone

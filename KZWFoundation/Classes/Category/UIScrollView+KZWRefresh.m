@@ -7,13 +7,13 @@
 //
 
 #import "UIScrollView+KZWRefresh.h"
-#import <MJRefresh/MJRefresh.h>
-#import "UIColor+KZWColor.h"
 #import "KZWConstants.h"
+#import "UIColor+KZWColor.h"
+#import <MJRefresh/MJRefresh.h>
 
 @implementation UIScrollView (KZWRefresh)
 
-- (void)addHeaderRefreshWithCallback:(nullable void(^)())callback {
+- (void)addHeaderRefreshWithCallback:(nullable void (^)())callback {
     MJRefreshNormalHeader *refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:callback];
     [refreshHeader setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
     [refreshHeader setTitle:@"松开刷新" forState:MJRefreshStatePulling];
@@ -25,7 +25,7 @@
     self.mj_header = refreshHeader;
 }
 
-- (void)addFooterRefreshWithCallback:(nullable void(^)())callback {
+- (void)addFooterRefreshWithCallback:(nullable void (^)())callback {
     MJRefreshAutoNormalFooter *refreshFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:callback];
     [refreshFooter setTitle:@"" forState:MJRefreshStateIdle];
     [refreshFooter setTitle:@"" forState:MJRefreshStateRefreshing];

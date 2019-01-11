@@ -12,27 +12,27 @@
 @implementation NSObject (AssociatedObject)
 
 - (id)object:(SEL)key {
-  return objc_getAssociatedObject(self, key);
+    return objc_getAssociatedObject(self, key);
 }
 
 - (void)setAssignObject:(id)object withKey:(SEL)key {
-  objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (void)setRetainNonatomicObject:(id)object withKey:(SEL)key {
-  objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setCopyNonatomicObject:(id)object withKey:(SEL)key {
-  objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void)setRetainObject:(id)object withKey:(SEL)key {
-  objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (void)setCopyObject:(id)object withKey:(SEL)key {
-  objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY);
 }
 
 @end

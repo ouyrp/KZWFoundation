@@ -14,7 +14,7 @@
 + (NSValueTransformer *)JSONTransformerForKey:(NSString *)key {
     if ([key isEqualToString:@"shareContent"]) {
         return [MTLJSONAdapter dictionaryTransformerWithModelClass:[KZWShareModel class]];
-    } 
+    }
     return nil;
 }
 

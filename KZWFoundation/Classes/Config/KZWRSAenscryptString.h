@@ -10,6 +10,6 @@
 
 @interface KZWRSAenscryptString : NSObject
 
-+ (NSString *)signStr:(NSMutableDictionary*)dict;
++ (NSString *)signStr:(NSMutableDictionary *)dict;
 
 @end

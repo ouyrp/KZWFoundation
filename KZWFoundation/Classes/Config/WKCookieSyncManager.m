@@ -51,7 +51,7 @@
             _processPool = [[WKProcessPool alloc] init];
         });
     }
-    
+
     return _processPool;
 }
 
@@ -62,10 +62,10 @@
         urlComponents.scheme = @"http";
         urlComponents.path = @"/tsttsssdsds.php";
         NSLog(@"测试url=%@", urlComponents.URL);
-        
+
         return urlComponents.URL;
     }
-    
+
     return _testUrl;
 }
 
@@ -75,7 +75,7 @@
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     //js函数
     NSString *JSFuncString =
-    @"function setCookie(name,value,expires)\
+        @"function setCookie(name,value,expires)\
     {\
         var oDate=new Date();\
         oDate.setDate(oDate.getDate()+expires);\
@@ -93,7 +93,7 @@
         var cval=getCookie(name);\
         if(cval!=null) document.cookie= name + '='+cval+';expires='+exp.toGMTString();\
     }";
-    
+
     //拼凑js字符串
     NSMutableString *JSCookieString = JSFuncString.mutableCopy;
     for (NSHTTPCookie *cookie in cookieStorage.cookies) {

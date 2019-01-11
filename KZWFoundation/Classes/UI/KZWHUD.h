@@ -6,8 +6,8 @@
 //  Copyright © 2017年 kuaijiankang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "KZWVersionModel.h"
+#import <UIKit/UIKit.h>
 
 @interface KZWHUD : UIView
 
@@ -15,7 +15,7 @@
 
 #pragma mark - 带网络图片与block回调的弹窗
 /** 带网络图片与block回调的弹窗 */
-- (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void(^)(void))buttonClickedBlock;
+- (void)showAlertWithImageURL:(NSString *)imageURL ButtonClickedBlock:(void (^)(void))buttonClickedBlock;
 
 - (void)showVersionUpdate:(KZWVersionModel *)model;
 

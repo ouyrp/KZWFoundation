@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ouy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "LPDBModel.h"
+#import <Foundation/Foundation.h>
 
 @interface KZWJpushInfoModel : LPDBModel
 
@@ -35,5 +35,3 @@
 @property (copy, nonatomic) KZWJpushAps *aps;
 
 @end
-
-

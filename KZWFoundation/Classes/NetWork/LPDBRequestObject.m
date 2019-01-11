@@ -7,13 +7,13 @@
 //
 
 #import "LPDBRequestObject.h"
-#import "NSObject+Dictionary.h"
-#import <Mantle/MTLJSONAdapter.h>
-#import "NSError+LPDErrorMessage.h"
 #import "ELMKeychainUtil.h"
-#import "UIApplication+ELMFoundation.h"
 #import "KZWConstants.h"
 #import "KZWDebugService.h"
+#import "NSError+LPDErrorMessage.h"
+#import "NSObject+Dictionary.h"
+#import "UIApplication+ELMFoundation.h"
+#import <Mantle/MTLJSONAdapter.h>
 
 @interface LPDBRequestObject ()
 @property (nonatomic, copy) LPDBRequestComplete complete;
@@ -40,17 +40,9 @@
                        }];
         } break;
         case LPDHTTPMethodPost: {
-            _task = [LPDBHttpManager POST:self.path
-                               parameters:self.params
-                                   images:self.images
-                        completionHandler:^(NSURLSessionDataTask *_Nonnull task, id _Nonnull responseObject, NSError *_Nonnull error) {
-                            [self handleInMainThread:task responseObject:responseObject error:error];
-                        }
-                                 progress:^(NSProgress *_Nonnull uploadProgress) {
-                                     if (progress) {
-                                         progress(uploadProgress);
-                                     }
-                                 }];
+            _task = [LPDBHttpManager POST:self.path parameters:self.params completionHandler:^(NSURLSessionDataTask *_Nonnull task, id _Nonnull responseObject, NSError *_Nonnull error) {
+                [self handleInMainThread:task responseObject:responseObject error:error];
+            }];
         } break;
         case LPDHTTPMethodDelete: {
             _task = [LPDBHttpManager DELETE:self.path
@@ -59,7 +51,30 @@
                               [self handleInMainThread:task responseObject:responseObject error:error];
                           }];
         } break;
-            
+        case LPDHTTPMethodImage: {
+            if (self.images) {
+                _task = [LPDBHttpManager POST:self.path
+                    parameters:self.params
+                    images:self.images
+                    completionHandler:^(NSURLSessionDataTask *_Nonnull task, id _Nonnull responseObject, NSError *_Nonnull error) {
+                        [self handleInMainThread:task responseObject:responseObject error:error];
+                    }
+                    progress:^(NSProgress *_Nonnull uploadProgress) {
+                        if (progress) {
+                            progress(uploadProgress);
+                        }
+                    }];
+            } else if (self.image) {
+                _task = [LPDBHttpManager POST:self.path parameters:self.params image:self.image imageName:self.imageName completionHandler:^(NSURLSessionDataTask *_Nonnull task, id _Nonnull responseObject, NSError *_Nonnull error) {
+                    [self handleInMainThread:task responseObject:responseObject error:error];
+                } progress:^(NSProgress *_Nonnull uploadProgress) {
+                    if (progress) {
+                        progress(uploadProgress);
+                    }
+                }];
+            }
+
+        } break;
         default:
             break;
     }
@@ -83,7 +98,7 @@
             }
         }
     }
-    
+
     return propertyParams.count == 0 ? nil : [propertyParams copy];
 }
 
@@ -128,14 +143,14 @@
                         self.complete(responseObject[@"data"], nil);
                         return;
                     }
-                    
+
                     if ([responseObject[@"data"] isKindOfClass:[NSArray class]]) {
-                        
+
                         if (!self.className) {
                             self.complete(responseObject, nil);
                             return;
                         }
-                        
+
                         NSError *parseError = nil;
                         NSArray *object = [MTLJSONAdapter modelsOfClass:NSClassFromString(self.className)
                                                           fromJSONArray:responseObject[@"data"]
@@ -144,14 +159,14 @@
                             self.complete(nil, [NSError errorWithDomain:LPDBNetworkErrorDomain
                                                                    code:LPDBNeteworkBusinessError
                                                                userInfo:@{
-                                                                          LPDBNetworkUserMessage: @"后台数据格式不正确"
-                                                                          }]);
+                                                                   LPDBNetworkUserMessage : @"后台数据格式不正确"
+                                                               }]);
                             return;
                         }
                         self.complete(object, nil);
                         return;
                     }
-                    
+
                     id object = [MTLJSONAdapter modelOfClass:NSClassFromString(self.className)
                                           fromJSONDictionary:responseObject[@"data"]
                                                        error:&parseError];
@@ -159,34 +174,35 @@
                         self.complete(nil, [NSError errorWithDomain:LPDBNetworkErrorDomain
                                                                code:LPDBNeteworkBusinessError
                                                            userInfo:@{
-                                                                      LPDBNetworkUserMessage: @"后台数据格式不正确"
-                                                                      }]);;
+                                                               LPDBNetworkUserMessage : @"后台数据格式不正确"
+                                                           }]);
+                        ;
                         return;
                     }
                     self.complete(object, nil);
                     return;
                 }
-                
+
                 NSString *message = ((NSDictionary *)responseObject)[@"msg"] ? ((NSDictionary *)responseObject)[@"msg"] : @"未知错误";
 
                 if ([code integerValue] == 20000) {
                     [ELMKeychainUtil deleteAllInfoInKeyChain];
                 }
-                
+
                 NSError *logicError = [NSError errorWithDomain:LPDBNetworkErrorDomain
                                                           code:LPDBNeteworkBusinessError
                                                       userInfo:@{
-                                                                 LPDBNetworkUserMessage: message,
-                                                                 LPDBNetworkBusinessErrorCode: code ? code : @"unknow"
-                                                                 }];
+                                                          LPDBNetworkUserMessage : message,
+                                                          LPDBNetworkBusinessErrorCode : code ? code : @"unknow"
+                                                      }];
                 self.complete(nil, logicError);
                 return;
             }
             NSError *dataError = [NSError errorWithDomain:LPDBNetworkErrorDomain
                                                      code:LPDBNeteworkBusinessError
                                                  userInfo:@{
-                                                            LPDBNetworkUserMessage: @"数据格式不正确"
-                                                            }];
+                                                     LPDBNetworkUserMessage : @"数据格式不正确"
+                                                 }];
             self.complete(nil, dataError);
             return;
         } else if ([responseObject isKindOfClass:[NSArray class]]) {
@@ -196,13 +212,13 @@
             }
             NSError *parseError = nil;
             NSArray *object =
-            [MTLJSONAdapter modelsOfClass:NSClassFromString(self.className) fromJSONArray:responseObject[@"data"] error:&parseError];
+                [MTLJSONAdapter modelsOfClass:NSClassFromString(self.className) fromJSONArray:responseObject[@"data"] error:&parseError];
             if (parseError) {
                 self.complete(nil, [NSError errorWithDomain:LPDBNetworkErrorDomain
                                                        code:LPDBNeteworkBusinessError
                                                    userInfo:@{
-                                                              LPDBNetworkUserMessage: @"后台数据格式不正确"
-                                                              }]);
+                                                       LPDBNetworkUserMessage : @"后台数据格式不正确"
+                                                   }]);
                 return;
             }
             self.complete(object, nil);

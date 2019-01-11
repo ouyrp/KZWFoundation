@@ -6,20 +6,20 @@
 //  Copyright (c) 2015年 foxsofter. All rights reserved.
 //
 
-#import "NSObject+LPDAssociatedObject.h"
 #import "UIControl+Block.h"
+#import "NSObject+LPDAssociatedObject.h"
 
-#define UIControlEventImpl(methodName, eventName)                                                                      \
-  -(void)methodName : (void (^)(void))eventBlock {                                                                     \
-    [self setCopyNonatomicObject:eventBlock withKey:@selector(methodName:)];                                           \
-    [self addTarget:self action:@selector(methodName##Action:) forControlEvents:UIControlEvent##eventName];            \
-  }                                                                                                                    \
-  -(void)methodName##Action : (id)sender {                                                                             \
-    void (^block)() = [self object:@selector(methodName:)];                                                            \
-    if (block) {                                                                                                       \
-      block();                                                                                                         \
-    }                                                                                                                  \
-  }
+#define UIControlEventImpl(methodName, eventName)                                                               \
+    -(void)methodName : (void (^)(void))eventBlock {                                                            \
+        [self setCopyNonatomicObject:eventBlock withKey:@selector(methodName:)];                                \
+        [self addTarget:self action:@selector(methodName##Action:) forControlEvents:UIControlEvent##eventName]; \
+    }                                                                                                           \
+    -(void)methodName##Action : (id)sender {                                                                    \
+        void (^block)() = [self object:@selector(methodName:)];                                                 \
+        if (block) {                                                                                            \
+            block();                                                                                            \
+        }                                                                                                       \
+    }
 
 @interface UIControl ()
 

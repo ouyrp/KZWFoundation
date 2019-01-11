@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ouy. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "KZWJavascripModel.h"
+#import <Foundation/Foundation.h>
 
 @protocol KZWDSJavaScripInterfaceDelegate <NSObject>
 @optional

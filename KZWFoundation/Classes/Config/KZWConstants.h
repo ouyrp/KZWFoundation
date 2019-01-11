@@ -20,44 +20,48 @@ extern NSString *const KZWDEBUGKEY;
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 // iPhone X
-#define  KZW_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
+#define KZW_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
 
 // Status bar height.
-#define  KZW_StatusBarHeight      (KZW_iPhoneX ? 44.f : 20.f)
+#define KZW_StatusBarHeight (KZW_iPhoneX ? 44.f : 20.f)
 
-#define  KZW_PersonrHeight      (KZW_iPhoneX ? 44.f : 30.f)
+#define KZW_PersonrHeight (KZW_iPhoneX ? 44.f : 30.f)
 
 
 // Navigation bar height.
-#define  KZW_NavigationBarHeight  44.f
+#define KZW_NavigationBarHeight 44.f
 
 // Tabbar height.
-#define  KZW_TabbarHeight         (KZW_iPhoneX ? (49.f+34.f) : 49.f)
+#define KZW_TabbarHeight (KZW_iPhoneX ? (49.f + 34.f) : 49.f)
 
 // Tabbar safe bottom margin.
-#define  KZW_TabbarSafeBottomMargin         (KZW_iPhoneX ? 34.f : 0.f)
+#define KZW_TabbarSafeBottomMargin (KZW_iPhoneX ? 34.f : 0.f)
 
 // Status bar & navigation bar height.
-#define  KZW_StatusBarAndNavigationBarHeight  (KZW_iPhoneX ? 88.f : 64.f)
+#define KZW_StatusBarAndNavigationBarHeight (KZW_iPhoneX ? 88.f : 64.f)
 
-#define KZW_ViewSafeAreInsets(view) ({UIEdgeInsets insets; if(@available(iOS 11.0, *)) {insets = view.safeAreaInsets;} else {insets = UIEdgeInsetsZero;} insets;})
+#define KZW_ViewSafeAreInsets(view) ({UIEdgeInsets insets; if(@available(iOS 11.0, *)) {insets = view.safeAreaInsets;} else {insets = UIEdgeInsetsZero;} insets; })
 
-#define BoundingRectWithSize(text, size, font)                                                                         \
-[text boundingRectWithSize:size                                                                                      \
-options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading                    \
-attributes:@{NSFontAttributeName:font}                                                              \
-context:nil]
+#define BoundingRectWithSize(text, size, font)                                                        \
+    [text boundingRectWithSize:size                                                                   \
+                       options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading \
+                    attributes:@{NSFontAttributeName : font}                                          \
+                       context:nil]
 
-#define KWidth_Scale    [UIScreen mainScreen].bounds.size.width/375.0f
+#define KWidth_Scale [UIScreen mainScreen].bounds.size.width / 375.0f
 
-#define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
-#define WeakObj(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
+#define StrongObj(o)   \
+    autoreleasepool {} \
+    __strong typeof(o) o = o##Weak;
+#define WeakObj(o)     \
+    autoreleasepool {} \
+    __weak typeof(o) o##Weak = o;
 
-#define SuppressPerformSelectorLeakWarning(Stuff)                                                                      \
-do {                                                                                                                 \
-_Pragma("clang diagnostic push") _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") Stuff;        \
-_Pragma("clang diagnostic pop")                                                                                    \
-} while (0)
+#define SuppressPerformSelectorLeakWarning(Stuff)                                                                   \
+    do {                                                                                                            \
+        _Pragma("clang diagnostic push") _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") Stuff; \
+        _Pragma("clang diagnostic pop")                                                                             \
+    } while (0)
 
 #pragma mark colors
 
@@ -106,7 +110,3 @@ static CGFloat FontSize18 = 9;
 #pragma mark cornerRadius
 
 static CGFloat Cornerradius30 = 15;
-
-
-
-
