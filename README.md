@@ -20,9 +20,24 @@ it, simply add the following line to your Podfile:
 pod 'KZWFoundation'
 ```
 
+## 1.简介
+
+KZWFoundation 是一套通用iOS框架
+
+## 2使用说明
+
+### 2.1依赖配置
+
+导入头文件```#import <KZWFoundation/KZWFoundationHear.h>```
+
+### 2.2 使用方法
+
+[使用说明--简书](https://www.jianshu.com/u/266302c54057)
+[使用说明--掘金](https://juejin.im/user/5a322782f265da430406a30e/posts)
+
 ## Author
 
-ouyrp, rp.ouyang001@bkjk.com
+ouyangjay, mooncoder@163.com
 
 ## License
 
