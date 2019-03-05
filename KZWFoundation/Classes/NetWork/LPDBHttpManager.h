@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
                     parameters:(id)parameters
                          image:(UIImage *)image
                      imageName:(NSString *)imageName
-             completionHandler:(void (^)(NSURLSessionDataTask *_Nonnull task, id _Nonnull, NSError *_Nonnull error))complete
+             completionHandler:(void (^)(NSURLSessionDataTask *_Nonnull task, id _Nonnull responseObject, NSError *_Nonnull error))complete
                       progress:(void (^)(NSProgress *_Nonnull))progress;
 
 + (NSURLSessionDataTask *)POST:(NSString *_Nonnull)path
